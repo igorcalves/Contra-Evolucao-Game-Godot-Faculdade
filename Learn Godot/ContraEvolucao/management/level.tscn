@@ -1,10 +1,11 @@
-[gd_scene load_steps=10 format=3 uid="uid://bkkqehkjfkqxj"]
+[gd_scene load_steps=11 format=3 uid="uid://bkkqehkjfkqxj"]
 
 [ext_resource type="Script" path="res://ContraEvolucao/management/Terrain.gd" id="1_crn4e"]
 [ext_resource type="Texture2D" uid="uid://cj04hyx4pu447" path="res://assets/Terrain/Ground/Grass_Flat.png" id="1_pvoef"]
-[ext_resource type="PackedScene" path="res://ContraEvolucao/Sprites/goblin/goblin.tscn" id="1_sex5k"]
+[ext_resource type="PackedScene" uid="uid://boh7scucyrto" path="res://ContraEvolucao/Sprites/goblin/goblin.tscn" id="1_sex5k"]
 [ext_resource type="Texture2D" uid="uid://b73einysgfe0d" path="res://assets/Terrain/Water/Water.png" id="2_hi377"]
 [ext_resource type="PackedScene" uid="uid://pj504pkkklpk" path="res://ContraEvolucao/Sprites/hero/Player.tscn" id="5_qo5gy"]
+[ext_resource type="PackedScene" uid="uid://dvifonnrom8jg" path="res://ContraEvolucao/management/tree.tscn" id="6_v5vmj"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rb831"]
 texture = ExtResource("2_hi377")
@@ -149,3 +150,18 @@ collision_mask = 5
 
 [node name="Player" parent="." instance=ExtResource("5_qo5gy")]
 collision_mask = 6
+
+[node name="Goblin2" parent="." instance=ExtResource("1_sex5k")]
+position = Vector2(433, -2)
+
+[node name="Goblin3" parent="." instance=ExtResource("1_sex5k")]
+position = Vector2(447, 128)
+
+[node name="Goblin4" parent="." instance=ExtResource("1_sex5k")]
+position = Vector2(892, 263)
+
+[node name="Goblin5" parent="." instance=ExtResource("1_sex5k")]
+position = Vector2(902, -217)
+
+[node name="Tree" parent="." instance=ExtResource("6_v5vmj")]
+position = Vector2(-151, -193)

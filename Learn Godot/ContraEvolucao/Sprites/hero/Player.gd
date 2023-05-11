@@ -11,6 +11,7 @@ var can_attack: bool = true
 var can_die: bool = false
 var sides : String = ""
 
+
 @export var health: int = 10
 @export var move_speed: float = 256
 @export var damage: int = 1

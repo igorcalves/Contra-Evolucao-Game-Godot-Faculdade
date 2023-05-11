@@ -11,7 +11,6 @@ const OFFSET: Vector2 = Vector2(0,31)
 var player_ref: CharacterBody2D = null
 var can_die: bool = false
 
-
 @export var health = 3
 @export var move_speed: float = 192.0
 @export var distance_threshold: float = 60.0
