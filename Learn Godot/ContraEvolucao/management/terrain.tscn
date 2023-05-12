@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3]
+[gd_scene load_steps=8 format=3 uid="uid://dteqa4qw2dhw2"]
 
 [ext_resource type="Script" path="res://ContraEvolucao/management/Terrain.gd" id="1_ld2v5"]
 [ext_resource type="Texture2D" uid="uid://b73einysgfe0d" path="res://assets/Terrain/Water/Water.png" id="2_e7pc0"]

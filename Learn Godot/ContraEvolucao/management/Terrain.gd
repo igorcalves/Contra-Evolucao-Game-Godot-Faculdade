@@ -21,8 +21,8 @@ func _ready() -> void:
 
 	
 func generate_water_tiles(used_rect: Rect2) -> void:
-	for x in range (used_rect.position.x -10, used_rect.size.x +10):
-		for y in range (used_rect.position.y -10, used_rect.size.y +10):
+	for x in range (used_rect.position.x -25, used_rect.size.x +25):
+		for y in range (used_rect.position.y -25, used_rect.size.y +25):
 			if grass_used_cell.has(Vector2i(x,y)):
 				continue
 			water_tilemap.set_cell(DEFAULT_LAYER, Vector2i(x,y), DEFAULT_LAYER,Vector2i(0,0))

@@ -1,0 +1,37 @@
+[gd_scene load_steps=3 format=3 uid="uid://4wadj0oi3h06"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3rd0o"]
+size = Vector2(21, 15)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_y6j4n"]
+animations = []
+
+[node name="StaticBody2D" type="StaticBody2D"]
+collision_layer = 4
+collision_mask = 3
+
+[node name="litle_rock" type="CollisionShape2D" parent="."]
+position = Vector2(-1.5, -2.5)
+shape = SubResource("RectangleShape2D_3rd0o")
+
+[node name="litle_rock_animation" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_y6j4n")
+animation = &""
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2(-1.5, -2.5)
+shape = SubResource("RectangleShape2D_3rd0o")
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="."]
+position = Vector2(83, 169)
+sprite_frames = SubResource("SpriteFrames_y6j4n")
+animation = &""
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="."]
+position = Vector2(31.5, -2.5)
+shape = SubResource("RectangleShape2D_3rd0o")
+
+[node name="AnimatedSprite2D3" type="AnimatedSprite2D" parent="."]
+position = Vector2(33, 0)
+sprite_frames = SubResource("SpriteFrames_y6j4n")
+animation = &""

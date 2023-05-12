@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://pj504pkkklpk"]
+[gd_scene load_steps=22 format=3 uid="uid://pj504pkkklpk"]
 
 [ext_resource type="Script" path="res://ContraEvolucao/Sprites/hero/Player.gd" id="1_mvqct"]
 [ext_resource type="Texture2D" uid="uid://ckkca35xmom2u" path="res://ContraEvolucao/Sprites/hero/player.png" id="2_sgnvu"]
@@ -135,7 +135,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("../AttackUpArea/ColissitonAreaAttackUp:disabled")
+tracks/2/path = NodePath("../AttackTurnedArea/ColissitonAreaAttackTurned:disabled")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -147,7 +147,7 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("../AttackTurnedArea/ColissitonAreaAttackTurned:disabled")
+tracks/3/path = NodePath("../AttackUpArea/ColissitonAreaAttackUp:disabled")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
@@ -269,10 +269,13 @@ _data = {
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8qt2h"]
-size = Vector2(18, 8.33333)
+size = Vector2(19, 11.1667)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fpxrl"]
+size = Vector2(21, 19.3333)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_igweu"]
-size = Vector2(11.8125, 13)
+size = Vector2(14.4791, 19)
 
 [sub_resource type="Animation" id="Animation_220nh"]
 length = 0.001
@@ -312,9 +315,12 @@ _data = {
 }
 
 [node name="Player" type="CharacterBody2D"]
+z_index = 1
 scale = Vector2(3, 3)
-collision_mask = 2
+collision_layer = 5
+collision_mask = 6
 script = ExtResource("1_mvqct")
+move_speed = 2000.0
 
 [node name="Texture" type="Sprite2D" parent="."]
 texture_filter = 1
@@ -323,7 +329,6 @@ hframes = 6
 vframes = 10
 
 [node name="Collision" type="CollisionShape2D" parent="."]
-visible = false
 position = Vector2(0.75, 16)
 shape = SubResource("12")
 
@@ -338,7 +343,7 @@ collision_layer = 0
 collision_mask = 2
 
 [node name="ColissitonAreaAttackDown" type="CollisionShape2D" parent="AttackDownArea"]
-position = Vector2(2, 21)
+position = Vector2(2.5, 22.4167)
 shape = SubResource("RectangleShape2D_8qt2h")
 disabled = true
 
@@ -347,8 +352,8 @@ collision_layer = 0
 collision_mask = 2
 
 [node name="ColissitonAreaAttackUp" type="CollisionShape2D" parent="AttackUpArea"]
-position = Vector2(0.333333, 1.33333)
-shape = SubResource("RectangleShape2D_8qt2h")
+position = Vector2(0.5, 0.333333)
+shape = SubResource("RectangleShape2D_fpxrl")
 disabled = true
 
 [node name="AttackTurnedArea" type="Area2D" parent="."]
@@ -356,7 +361,7 @@ collision_layer = 0
 collision_mask = 2
 
 [node name="ColissitonAreaAttackTurned" type="CollisionShape2D" parent="AttackTurnedArea"]
-position = Vector2(12.0938, 14.5)
+position = Vector2(13.4271, 11.5)
 shape = SubResource("RectangleShape2D_igweu")
 disabled = true
 

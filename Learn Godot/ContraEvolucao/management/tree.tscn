@@ -39,7 +39,8 @@ animations = [{
 }]
 
 [node name="Tree" type="AnimatedSprite2D"]
-position = Vector2(145, 99)
+texture_filter = 1
+position = Vector2(182, 112)
 sprite_frames = SubResource("SpriteFrames_g2w0o")
 autoplay = "default"
-frame_progress = 0.949456
+frame_progress = 0.62983

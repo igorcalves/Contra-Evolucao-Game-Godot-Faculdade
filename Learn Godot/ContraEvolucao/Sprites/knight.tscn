@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3]
+[gd_scene load_steps=15 format=3 uid="uid://cr76wprihqbm1"]
 
 [ext_resource type="Script" path="res://ContraEvolucao/Sprites/knight.gd" id="1_r15dx"]
 [ext_resource type="Texture2D" uid="uid://c01dqxinxmol6" path="res://assets/Factions/Knights/Warrior.png" id="1_utsc1"]

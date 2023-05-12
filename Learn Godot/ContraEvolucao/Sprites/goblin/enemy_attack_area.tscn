@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3]
+[gd_scene load_steps=3 format=3 uid="uid://bo5dbwy5bncnj"]
 
 [ext_resource type="Script" path="res://ContraEvolucao/Sprites/goblin/enemy_attack_area.gd" id="1_kve8a"]
 
