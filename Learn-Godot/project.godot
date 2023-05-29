@@ -18,7 +18,6 @@ config/icon="res://icon.svg"
 [autoload]
 
 transitionScreen="*res://ContraEvolucao/management/transition_screen.tscn"
-Global="*res://Scripts/Global.gd"
 
 [input]
 
