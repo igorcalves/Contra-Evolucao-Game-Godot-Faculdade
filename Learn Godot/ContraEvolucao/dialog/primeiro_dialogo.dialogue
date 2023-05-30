@@ -1,8 +1,9 @@
 ~ start
 
-- VOCE
-	Pescador Perdido: EU
-- EU
-	Pescador Perdido: VOCÊ
+- VOCE QUER ATAQUE CUSTA 10
+		set Global.coins += 10 
+- Mostras
+	set Global.get_coins()
 
-- Tchal => END
+- Tchal 
+	=> END

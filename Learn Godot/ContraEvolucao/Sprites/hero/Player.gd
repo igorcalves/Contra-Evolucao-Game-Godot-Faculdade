@@ -148,7 +148,7 @@ func update_health(value: int) -> void:
 
 
 func on_detection_area_body_entered(body):
-	#if body.has_method("NPC"):
+	if body.has_method("NPC"):
 		npc_in_range = true
 
 

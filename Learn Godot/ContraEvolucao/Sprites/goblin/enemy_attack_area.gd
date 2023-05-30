@@ -8,6 +8,8 @@ func _process(delta):
 
 
 func on_body_entered(body):
+	if body.has_method("NPC"):
+		return
 	body.update_health(damage)
 
 

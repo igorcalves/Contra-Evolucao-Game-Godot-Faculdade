@@ -66,6 +66,8 @@ func update_health(value: int) -> void:
 	aux_animation_player.play("hit")
 	
 func on_detection_area_body_entered(body):
+	if body.has_method("NPC"):
+		return
 	player_ref = body
 	
 func on_detection_area_body_exited(_body):
