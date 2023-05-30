@@ -1,4 +1,4 @@
-[gd_scene load_steps=77 format=3 uid="uid://dq17rob807lfj"]
+[gd_scene load_steps=77 format=3 uid="uid://dnfqh1fvpqspc"]
 
 [ext_resource type="Script" path="res://ContraEvolucao/management/Terrain.gd" id="1_crn4e"]
 [ext_resource type="Texture2D" uid="uid://cj04hyx4pu447" path="res://assets/Terrain/Ground/Grass_Flat.png" id="1_pvoef"]
