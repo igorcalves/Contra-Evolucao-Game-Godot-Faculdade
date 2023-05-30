@@ -10,7 +10,6 @@ const OFFSET: Vector2 = Vector2(0,31)
 
 var player_ref: CharacterBody2D = null
 var can_die: bool = false
-var kills = 1
 
 @export var health = 3
 @export var move_speed: float = 192.0
@@ -60,7 +59,6 @@ func update_health(value: int) -> void:
 	if health<= 0:
 		can_die = true
 		animation.play("death")
-		Global.kills += kills
 		
 		return
 	aux_animation_player.play("hit")
