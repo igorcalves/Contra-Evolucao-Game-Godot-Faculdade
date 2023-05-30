@@ -11,6 +11,7 @@ var can_attack: bool = true
 var can_die: bool = false
 var sides : String = ""
 var npc_in_range = false
+var path_dialogue: String = "res://ContraEvolucao/dialog/primeiro_dialogo.dialogue"
 
 
 @export var health: int = 10
@@ -19,6 +20,11 @@ var npc_in_range = false
 
 
 func _physics_process(_delta: float) -> void:
+	
+	if npc_in_range:
+		if Input.is_action_just_pressed("ui_accept"):
+			DialogueManager.show_example_dialogue_balloon(load(path_dialogue),"start")
+	
 	if can_attack == false or can_die:
 		return
 	match_slide()	
@@ -142,10 +148,10 @@ func update_health(value: int) -> void:
 
 
 func on_detection_area_body_entered(body):
-	if body.has_method("NPC"):
+	#if body.has_method("NPC"):
 		npc_in_range = true
 
 
 func on_detection_area_body_exited(body):
-	if body.has_method("NPC"):
+	#if body.has_method("NPC"):
 		npc_in_range = false

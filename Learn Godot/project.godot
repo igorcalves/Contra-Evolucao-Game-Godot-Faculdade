@@ -20,7 +20,6 @@ config/icon="res://icon.svg"
 transitionScreen="*res://ContraEvolucao/management/transition_screen.tscn"
 Global="*res://Scripts/Global.gd"
 DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
-globalDialogue="*res://Global(dialogue).gd"
 
 [editor_plugins]
 

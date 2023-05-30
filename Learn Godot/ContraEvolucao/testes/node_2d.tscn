@@ -1,4 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://c1nogwc81nvba"]
+[gd_scene load_steps=3 format=3 uid="uid://c1nogwc81nvba"]
+
+[ext_resource type="PackedScene" uid="uid://pj504pkkklpk" path="res://ContraEvolucao/Sprites/hero/Player.tscn" id="1_jkkas"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_22muh"]
 size = Vector2(394, 342)
@@ -13,3 +15,6 @@ collision_layer = 4
 shape = SubResource("RectangleShape2D_22muh")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+
+[node name="Player" parent="." instance=ExtResource("1_jkkas")]
+move_speed = 400.0

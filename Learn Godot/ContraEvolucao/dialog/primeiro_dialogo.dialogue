@@ -1,6 +1,8 @@
 ~ start
 
-Pescador Perdido: boa viagem amigo
-Pescador Perdido: adeus.
+- VOCE
+	Pescador Perdido: EU
+- EU
+	Pescador Perdido: VOCÊ
 
-=> END
+- Tchal => END
