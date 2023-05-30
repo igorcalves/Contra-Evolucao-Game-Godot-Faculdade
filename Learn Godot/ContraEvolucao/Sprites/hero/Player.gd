@@ -131,7 +131,10 @@ func update_health(value: int) -> void:
 		attack_area_collision_Down.set_deferred("disabled",true)
 		attack_area_collision_turned.set_deferred("disabled",true)
 		attack_area_collision_Up.set_deferred("disabled",true)
+		Global.health = 0
 
 		return
 	
 	aux_animation_play.play("hit")
+	Global.health -= 1
+	

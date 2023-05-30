@@ -1,12 +1,18 @@
+<<<<<<< HEAD
 [gd_scene load_steps=77 format=3 uid="uid://bkkqehkjfkqxj"]
+=======
+[gd_scene load_steps=14 format=3 uid="uid://bkkqehkjfkqxj"]
+>>>>>>> hub_complete
 
 [ext_resource type="Script" path="res://ContraEvolucao/management/Terrain.gd" id="1_crn4e"]
+[ext_resource type="Script" path="res://Scripts/level_reset.gd" id="1_g5phg"]
 [ext_resource type="Texture2D" uid="uid://cj04hyx4pu447" path="res://assets/Terrain/Ground/Grass_Flat.png" id="1_pvoef"]
 [ext_resource type="PackedScene" uid="uid://boh7scucyrto" path="res://ContraEvolucao/Sprites/goblin/goblin.tscn" id="1_sex5k"]
 [ext_resource type="Texture2D" uid="uid://b73einysgfe0d" path="res://assets/Terrain/Water/Water.png" id="2_hi377"]
 [ext_resource type="Texture2D" uid="uid://df66nirgt2yae" path="res://ContraEvolucao/decoration/grass_tileset.png" id="2_xhq05"]
 [ext_resource type="Texture2D" uid="uid://cqks8emkawe1p" path="res://assets/Terrain/Decorations/Bush_01.png" id="4_61pgb"]
 [ext_resource type="PackedScene" uid="uid://pj504pkkklpk" path="res://ContraEvolucao/Sprites/hero/Player.tscn" id="5_qo5gy"]
+<<<<<<< HEAD
 [ext_resource type="Texture2D" uid="uid://dvyh2gvp7xunj" path="res://assets/Terrain/Decorations/Bush_02.png" id="5_uostu"]
 [ext_resource type="Texture2D" uid="uid://o4ixyxkpmh8w" path="res://assets/Terrain/Decorations/Bush_03.png" id="6_0nasm"]
 [ext_resource type="Texture2D" uid="uid://csttdttnxxplq" path="res://assets/Terrain/Decorations/Mushroom_01.png" id="7_h7g3o"]
@@ -187,6 +193,11 @@ terrain_set_0/mode = 0
 terrain_set_0/terrain_0/name = "Terrain 0"
 terrain_set_0/terrain_0/color = Color(0.5, 0.34375, 0.25, 1)
 sources/0 = SubResource("TileSetAtlasSource_7nl3u")
+=======
+[ext_resource type="PackedScene" uid="uid://dvifonnrom8jg" path="res://ContraEvolucao/management/tree.tscn" id="6_v5vmj"]
+[ext_resource type="PackedScene" uid="uid://ca2yvvr3ap8co" path="res://assets/Coin/coin.tscn" id="7_7lofa"]
+[ext_resource type="PackedScene" uid="uid://0qb7vbblhhq2" path="res://assets/Coin/hud.tscn" id="9_ix685"]
+>>>>>>> hub_complete
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rb831"]
 texture = ExtResource("2_hi377")
@@ -680,6 +691,9 @@ animations = [{
 size = Vector2(50.1127, 60.129)
 
 [node name="Level" type="Node2D"]
+script = ExtResource("1_g5phg")
+
+[node name="HUD" parent="." instance=ExtResource("9_ix685")]
 
 [node name="Terrain" type="Node2D" parent="."]
 script = ExtResource("1_crn4e")
@@ -6224,9 +6238,55 @@ flip_h = true
 position = Vector2(-8, -0.5)
 shape = SubResource("RectangleShape2D_70t3q")
 
+<<<<<<< HEAD
 [node name="Goblin" parent="." instance=ExtResource("1_sex5k")]
 position = Vector2(164, 344)
 
 [node name="Player" parent="." instance=ExtResource("5_qo5gy")]
 position = Vector2(-144, 311)
 move_speed = 256.0
+=======
+[node name="Coins" type="Node2D" parent="."]
+
+[node name="coin" parent="Coins" instance=ExtResource("7_7lofa")]
+position = Vector2(-170, 16)
+
+[node name="coin2" parent="Coins" instance=ExtResource("7_7lofa")]
+position = Vector2(-256, 12)
+
+[node name="coin3" parent="Coins" instance=ExtResource("7_7lofa")]
+position = Vector2(-342, 67)
+
+[node name="coin4" parent="Coins" instance=ExtResource("7_7lofa")]
+position = Vector2(-352, -79)
+
+[node name="coin5" parent="Coins" instance=ExtResource("7_7lofa")]
+position = Vector2(-454, -18)
+
+[node name="coin6" parent="Coins" instance=ExtResource("7_7lofa")]
+position = Vector2(-450, -143)
+
+[node name="Player" parent="." instance=ExtResource("5_qo5gy")]
+collision_mask = 6
+
+[node name="Tree" parent="." instance=ExtResource("6_v5vmj")]
+position = Vector2(-151, -193)
+
+[node name="Inimigos" type="Node2D" parent="."]
+
+[node name="Goblin" parent="Inimigos" instance=ExtResource("1_sex5k")]
+position = Vector2(256, 227)
+collision_mask = 5
+
+[node name="Goblin2" parent="Inimigos" instance=ExtResource("1_sex5k")]
+position = Vector2(433, -2)
+
+[node name="Goblin3" parent="Inimigos" instance=ExtResource("1_sex5k")]
+position = Vector2(504, 107)
+
+[node name="Goblin4" parent="Inimigos" instance=ExtResource("1_sex5k")]
+position = Vector2(892, 263)
+
+[node name="Goblin5" parent="Inimigos" instance=ExtResource("1_sex5k")]
+position = Vector2(902, -217)
+>>>>>>> hub_complete

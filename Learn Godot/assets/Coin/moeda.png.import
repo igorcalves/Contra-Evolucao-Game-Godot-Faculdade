@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b5kibevpc3k7r"
-path="res://.godot/imported/Attack4.png-51b6ed34ad0fe21558951e5545ab8bb6.ctex"
+uid="uid://cehasgjvpxjfb"
+path="res://.godot/imported/moeda.png-e6ecb285223dbdd55b447a26a370c94a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Enemy 2/Attack4.png"
-dest_files=["res://.godot/imported/Attack4.png-51b6ed34ad0fe21558951e5545ab8bb6.ctex"]
+source_file="res://assets/Coin/moeda.png"
+dest_files=["res://.godot/imported/moeda.png-e6ecb285223dbdd55b447a26a370c94a.ctex"]
 
 [params]
 

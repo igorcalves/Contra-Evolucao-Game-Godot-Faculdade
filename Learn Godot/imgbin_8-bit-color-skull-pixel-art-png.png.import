@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b5kibevpc3k7r"
-path="res://.godot/imported/Attack4.png-51b6ed34ad0fe21558951e5545ab8bb6.ctex"
+uid="uid://cmyrcdcueec82"
+path="res://.godot/imported/imgbin_8-bit-color-skull-pixel-art-png.png-492789fb5ab8a205d2742504b3ef0401.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Enemy 2/Attack4.png"
-dest_files=["res://.godot/imported/Attack4.png-51b6ed34ad0fe21558951e5545ab8bb6.ctex"]
+source_file="res://imgbin_8-bit-color-skull-pixel-art-png.png"
+dest_files=["res://.godot/imported/imgbin_8-bit-color-skull-pixel-art-png.png-492789fb5ab8a205d2742504b3ef0401.ctex"]
 
 [params]
 
