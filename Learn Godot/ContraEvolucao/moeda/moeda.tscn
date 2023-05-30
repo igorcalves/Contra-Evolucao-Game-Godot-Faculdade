@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://da7f13e674vpm"]
+
+[ext_resource type="Script" path="res://ContraEvolucao/moeda/moeda.gd" id="1_ue1pu"]
+[ext_resource type="Texture2D" uid="uid://dop0dbr4fj33u" path="res://ContraEvolucao/moeda/pieniąszka 1 1.png" id="2_hl1vx"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_qjjjo"]
+radius = 11.0
+
+[node name="moeda" type="Area2D"]
+script = ExtResource("1_ue1pu")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_hl1vx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_qjjjo")
