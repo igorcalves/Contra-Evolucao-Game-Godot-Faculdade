@@ -1,0 +1,46 @@
+[gd_scene load_steps=7 format=3 uid="uid://dvifonnrom8jg"]
+
+[ext_resource type="Texture2D" uid="uid://cixx3mph44br4" path="res://assets/Terrain/Decorations/Tree.png" id="1_nul14"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t0g2p"]
+atlas = ExtResource("1_nul14")
+region = Rect2(0, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l7qu6"]
+atlas = ExtResource("1_nul14")
+region = Rect2(192, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y4pfe"]
+atlas = ExtResource("1_nul14")
+region = Rect2(384, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qpu8a"]
+atlas = ExtResource("1_nul14")
+region = Rect2(576, 0, 192, 192)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_g2w0o"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t0g2p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l7qu6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y4pfe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qpu8a")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[node name="Tree" type="AnimatedSprite2D"]
+texture_filter = 1
+position = Vector2(182, 112)
+sprite_frames = SubResource("SpriteFrames_g2w0o")
+autoplay = "default"
+frame_progress = 0.62983

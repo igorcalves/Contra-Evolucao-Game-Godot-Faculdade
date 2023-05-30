@@ -1,0 +1,225 @@
+[gd_scene load_steps=8 format=3 uid="uid://830fyhraa6er"]
+
+[ext_resource type="Texture2D" uid="uid://cixx3mph44br4" path="res://assets/Terrain/Decorations/Tree.png" id="1_t3tpo"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_7035l"]
+radius = 18.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_asjf5"]
+atlas = ExtResource("1_t3tpo")
+region = Rect2(0, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ab1ge"]
+atlas = ExtResource("1_t3tpo")
+region = Rect2(192, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4reem"]
+atlas = ExtResource("1_t3tpo")
+region = Rect2(384, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vyb6h"]
+atlas = ExtResource("1_t3tpo")
+region = Rect2(576, 0, 192, 192)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wonkh"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_asjf5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ab1ge")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4reem")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vyb6h")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[node name="tree" type="Node2D"]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(1062, 118)
+collision_layer = 4
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(7, 63)
+shape = SubResource("CircleShape2D_7035l")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="StaticBody2D"]
+position = Vector2(7, -5)
+sprite_frames = SubResource("SpriteFrames_wonkh")
+autoplay = "default"
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="."]
+position = Vector2(142, 457)
+collision_layer = 4
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3"]
+position = Vector2(7, 63)
+shape = SubResource("CircleShape2D_7035l")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="StaticBody2D3"]
+position = Vector2(7, -5)
+sprite_frames = SubResource("SpriteFrames_wonkh")
+autoplay = "default"
+
+[node name="StaticBody2D4" type="StaticBody2D" parent="."]
+position = Vector2(678, 474)
+collision_layer = 4
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D4"]
+position = Vector2(7, 63)
+shape = SubResource("CircleShape2D_7035l")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="StaticBody2D4"]
+position = Vector2(7, -5)
+sprite_frames = SubResource("SpriteFrames_wonkh")
+autoplay = "default"
+
+[node name="StaticBody2D5" type="StaticBody2D" parent="."]
+position = Vector2(427, 404)
+collision_layer = 4
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D5"]
+position = Vector2(7, 63)
+shape = SubResource("CircleShape2D_7035l")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="StaticBody2D5"]
+position = Vector2(7, -5)
+sprite_frames = SubResource("SpriteFrames_wonkh")
+autoplay = "default"
+
+[node name="StaticBody2D6" type="StaticBody2D" parent="."]
+position = Vector2(128, 166)
+collision_layer = 4
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D6"]
+position = Vector2(7, 63)
+shape = SubResource("CircleShape2D_7035l")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="StaticBody2D6"]
+position = Vector2(7, -5)
+sprite_frames = SubResource("SpriteFrames_wonkh")
+autoplay = "default"
+
+[node name="StaticBody2D7" type="StaticBody2D" parent="."]
+position = Vector2(190, 260)
+collision_layer = 4
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D7"]
+position = Vector2(1, 72)
+shape = SubResource("CircleShape2D_7035l")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="StaticBody2D7"]
+sprite_frames = SubResource("SpriteFrames_wonkh")
+autoplay = "default"
+
+[node name="StaticBody2D8" type="StaticBody2D" parent="."]
+position = Vector2(544, 366)
+collision_layer = 4
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D8"]
+position = Vector2(7, 63)
+shape = SubResource("CircleShape2D_7035l")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="StaticBody2D8"]
+position = Vector2(7, -5)
+sprite_frames = SubResource("SpriteFrames_wonkh")
+autoplay = "default"
+
+[node name="StaticBody2D11" type="StaticBody2D" parent="."]
+position = Vector2(626, 215)
+collision_layer = 4
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D11"]
+position = Vector2(7, 63)
+shape = SubResource("CircleShape2D_7035l")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="StaticBody2D11"]
+position = Vector2(7, -5)
+sprite_frames = SubResource("SpriteFrames_wonkh")
+autoplay = "default"
+
+[node name="StaticBody2D13" type="StaticBody2D" parent="."]
+position = Vector2(781, 306)
+collision_layer = 4
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D13"]
+position = Vector2(7, 63)
+shape = SubResource("CircleShape2D_7035l")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="StaticBody2D13"]
+position = Vector2(7, -5)
+sprite_frames = SubResource("SpriteFrames_wonkh")
+autoplay = "default"
+
+[node name="StaticBody2D14" type="StaticBody2D" parent="."]
+position = Vector2(508, 137)
+collision_layer = 4
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D14"]
+position = Vector2(7, 63)
+shape = SubResource("CircleShape2D_7035l")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="StaticBody2D14"]
+position = Vector2(7, -5)
+sprite_frames = SubResource("SpriteFrames_wonkh")
+autoplay = "default"
+
+[node name="StaticBody2D12" type="StaticBody2D" parent="."]
+position = Vector2(775, 156)
+collision_layer = 4
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D12"]
+position = Vector2(7, 63)
+shape = SubResource("CircleShape2D_7035l")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="StaticBody2D12"]
+position = Vector2(7, -5)
+sprite_frames = SubResource("SpriteFrames_wonkh")
+autoplay = "default"
+
+[node name="StaticBody2D9" type="StaticBody2D" parent="."]
+position = Vector2(350, 260)
+collision_layer = 4
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D9"]
+position = Vector2(7, 63)
+shape = SubResource("CircleShape2D_7035l")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="StaticBody2D9"]
+position = Vector2(7, -5)
+sprite_frames = SubResource("SpriteFrames_wonkh")
+autoplay = "default"
+
+[node name="StaticBody2D10" type="StaticBody2D" parent="."]
+position = Vector2(748, 192)
+collision_layer = 4
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D10"]
+position = Vector2(-454, 362)
+shape = SubResource("CircleShape2D_7035l")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="StaticBody2D10"]
+position = Vector2(-454, 294)
+sprite_frames = SubResource("SpriteFrames_wonkh")
+autoplay = "default"
