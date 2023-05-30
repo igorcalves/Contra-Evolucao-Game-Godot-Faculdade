@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://py87jmbkdpvm"]
+[gd_scene load_steps=3 format=3 uid="uid://dw6f3mv0s1rar"]
 
 [ext_resource type="Script" path="res://Scripts/level_reset.gd" id="1_g5phg"]
 [ext_resource type="PackedScene" uid="uid://0qb7vbblhhq2" path="res://assets/Coin/hud.tscn" id="9_ix685"]
