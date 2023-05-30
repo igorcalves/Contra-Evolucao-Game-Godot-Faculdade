@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://py87jmbkdpvm"]
+
+[ext_resource type="Script" path="res://Scripts/level_reset.gd" id="1_g5phg"]
+[ext_resource type="PackedScene" uid="uid://0qb7vbblhhq2" path="res://assets/Coin/hud.tscn" id="9_ix685"]
+
+[node name="hud" type="Node2D"]
+script = ExtResource("1_g5phg")
+
+[node name="HUD" parent="." instance=ExtResource("9_ix685")]
