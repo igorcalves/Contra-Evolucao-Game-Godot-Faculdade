@@ -19,7 +19,7 @@
 [ext_resource type="Texture2D" uid="uid://dkejoy6f07i5d" path="res://assets/Terrain/Decorations/Rocks_04.png" id="13_4fv6v"]
 [ext_resource type="PackedScene" uid="uid://q6icegs6elvv" path="res://ContraEvolucao/decoration/plates_2d.tscn" id="16_n68ma"]
 [ext_resource type="Texture2D" uid="uid://cve2axukwq1bj" path="res://assets/plates/plateRL.png" id="17_embxl"]
-[ext_resource type="PackedScene" path="res://ContraEvolucao/management/HUD.tscn" id="20_iun7d"]
+[ext_resource type="PackedScene" uid="uid://dw6f3mv0s1rar" path="res://ContraEvolucao/management/HUD.tscn" id="20_iun7d"]
 [ext_resource type="PackedScene" uid="uid://ca2yvvr3ap8co" path="res://assets/Coin/coin.tscn" id="21_p1snt"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7nl3u"]
@@ -940,11 +940,11 @@ collision_layer = 4
 collision_mask = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Terrain/tree/tree5/StaticBody2D4"]
-position = Vector2(7, 63)
+position = Vector2(61, 49)
 shape = SubResource("CircleShape2D_7035l")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Terrain/tree/tree5/StaticBody2D4"]
-position = Vector2(7, -5)
+position = Vector2(61, -21)
 sprite_frames = SubResource("SpriteFrames_wonkh")
 autoplay = "default"
 
@@ -1336,11 +1336,11 @@ collision_layer = 4
 collision_mask = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Terrain/tree/tree7/StaticBody2D6"]
-position = Vector2(7, 63)
+position = Vector2(-80, 44)
 shape = SubResource("CircleShape2D_7035l")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Terrain/tree/tree7/StaticBody2D6"]
-position = Vector2(7, -5)
+position = Vector2(-82, -24)
 sprite_frames = SubResource("SpriteFrames_wonkh")
 autoplay = "default"
 
@@ -1354,6 +1354,7 @@ position = Vector2(1, 72)
 shape = SubResource("CircleShape2D_7035l")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Terrain/tree/tree7/StaticBody2D7"]
+position = Vector2(-2, 3)
 sprite_frames = SubResource("SpriteFrames_wonkh")
 autoplay = "default"
 
@@ -1437,7 +1438,7 @@ position = Vector2(7, 63)
 shape = SubResource("CircleShape2D_7035l")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Terrain/tree/tree7/StaticBody2D9"]
-position = Vector2(7, -5)
+position = Vector2(4, -6)
 sprite_frames = SubResource("SpriteFrames_wonkh")
 autoplay = "default"
 
@@ -4252,11 +4253,11 @@ collision_layer = 4
 collision_mask = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Terrain/tree/tree20/StaticBody2D4"]
-position = Vector2(7, 63)
+position = Vector2(18, 35)
 shape = SubResource("CircleShape2D_7035l")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Terrain/tree/tree20/StaticBody2D4"]
-position = Vector2(7, -5)
+position = Vector2(19, -33)
 sprite_frames = SubResource("SpriteFrames_wonkh")
 autoplay = "default"
 
@@ -4996,6 +4997,7 @@ sprite_frames = SubResource("SpriteFrames_dodk6")
 autoplay = "default"
 
 [node name="AnimatedSprite2D3" type="AnimatedSprite2D" parent="Terrain/rocks/Decorations_rocks2/rocks"]
+z_index = -1
 position = Vector2(4323, 1944)
 sprite_frames = SubResource("SpriteFrames_iok2c")
 autoplay = "default"
@@ -6289,4 +6291,4 @@ position = Vector2(755, -497)
 position = Vector2(1363, 1196)
 
 [node name="coin12" parent="coins" instance=ExtResource("21_p1snt")]
-position = Vector2(635, 1280)
+position = Vector2(672, 1305)
