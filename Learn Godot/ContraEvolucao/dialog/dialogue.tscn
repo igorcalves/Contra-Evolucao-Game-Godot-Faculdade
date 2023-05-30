@@ -1,0 +1,40 @@
+[gd_scene load_steps=3 format=3 uid="uid://c8i8gvgo8og1m"]
+
+[ext_resource type="Texture2D" uid="uid://bldejgmsmexwm" path="res://assets/dialog/dialogue_texture.png" id="1_r0vmt"]
+[ext_resource type="FontFile" uid="uid://c4fqoidpkapkt" path="res://ContraEvolucao/kurland.ttf" id="2_vclkt"]
+
+[node name="Dialogue" type="CanvasLayer"]
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+offset_left = 56.0
+offset_top = 111.0
+offset_right = 404.0
+offset_bottom = 183.0
+texture = ExtResource("1_r0vmt")
+region_rect = Rect2(8.12627, 9.46421, 15.4319, 13.8491)
+patch_margin_left = 13
+patch_margin_top = 1
+patch_margin_right = 13
+patch_margin_bottom = 1
+
+[node name="Name" type="RichTextLabel" parent="NinePatchRect"]
+layout_mode = 0
+offset_left = 9.0
+offset_top = 7.0
+offset_right = 84.0
+offset_bottom = 47.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("2_vclkt")
+theme_override_font_sizes/normal_font_size = 13
+text = "Name"
+
+[node name="Chat" type="RichTextLabel" parent="NinePatchRect"]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 22.0
+offset_right = 341.0
+offset_bottom = 68.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("2_vclkt")
+theme_override_font_sizes/normal_font_size = 13
+text = "chating..."

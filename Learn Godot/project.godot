@@ -19,6 +19,12 @@ config/icon="res://icon.svg"
 
 transitionScreen="*res://ContraEvolucao/management/transition_screen.tscn"
 Global="*res://Scripts/Global.gd"
+DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
+globalDialogue="*res://Global(dialogue).gd"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/dialogue_manager/plugin.cfg")
 
 [input]
 
@@ -52,6 +58,10 @@ attack={
 , Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"button_mask":0,"position":Vector2(0, 0),"global_position":Vector2(0, 0),"factor":1.0,"button_index":1,"pressed":false,"double_click":false,"script":null)
 ]
 }
+
+[internationalization]
+
+locale/translations_pot_files=PackedStringArray("res://ContraEvolucao/dialog/primeiro_dialogo.dialogue")
 
 [rendering]
 

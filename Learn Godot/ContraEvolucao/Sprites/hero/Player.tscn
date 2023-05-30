@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://pj504pkkklpk"]
+[gd_scene load_steps=23 format=3 uid="uid://pj504pkkklpk"]
 
 [ext_resource type="Script" path="res://ContraEvolucao/Sprites/hero/Player.gd" id="1_mvqct"]
 [ext_resource type="Texture2D" uid="uid://ckkca35xmom2u" path="res://ContraEvolucao/Sprites/hero/player.png" id="2_sgnvu"]
@@ -314,6 +314,9 @@ _data = {
 "hit": SubResource("Animation_0b6uv")
 }
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_ndp81"]
+radius = 25.3881
+
 [node name="Player" type="CharacterBody2D"]
 z_index = 1
 scale = Vector2(3, 3)
@@ -373,7 +376,15 @@ libraries = {
 [node name="Camera2D" type="Camera2D" parent="."]
 position_smoothing_enabled = true
 
+[node name="detectionArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="detectionArea"]
+position = Vector2(0.333333, 8.66667)
+shape = SubResource("CircleShape2D_ndp81")
+
 [connection signal="animation_finished" from="Animation" to="." method="on_animation_finished"]
 [connection signal="body_entered" from="AttackDownArea" to="." method="on_attack_area_body_entered_Down"]
 [connection signal="body_entered" from="AttackUpArea" to="." method="on_attack_area_body_entered_Up"]
 [connection signal="body_entered" from="AttackTurnedArea" to="." method="on_attack_area_body_entered_Turned"]
+[connection signal="body_entered" from="detectionArea" to="." method="on_detection_area_body_entered"]
+[connection signal="body_exited" from="detectionArea" to="." method="on_detection_area_body_exited"]

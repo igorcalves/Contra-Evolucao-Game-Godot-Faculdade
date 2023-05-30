@@ -10,6 +10,7 @@ extends CharacterBody2D
 var can_attack: bool = true
 var can_die: bool = false
 var sides : String = ""
+var npc_in_range = false
 
 
 @export var health: int = 10
@@ -138,3 +139,13 @@ func update_health(value: int) -> void:
 	aux_animation_play.play("hit")
 	Global.health -= 1
 	
+
+
+func on_detection_area_body_entered(body):
+	if body.has_method("NPC"):
+		npc_in_range = true
+
+
+func on_detection_area_body_exited(body):
+	if body.has_method("NPC"):
+		npc_in_range = false

@@ -1,0 +1,14 @@
+[remap]
+
+importer="dialogue_manager_compiler_8"
+type="Resource"
+uid="uid://cnl0x6gymmqxc"
+path="res://.godot/imported/primeiro_dialogo.dialogue-ecd86d7bb18dd0607cf7d8c71cb73213.tres"
+
+[deps]
+
+source_file="res://ContraEvolucao/dialog/primeiro_dialogo.dialogue"
+dest_files=["res://.godot/imported/primeiro_dialogo.dialogue-ecd86d7bb18dd0607cf7d8c71cb73213.tres"]
+
+[params]
+
