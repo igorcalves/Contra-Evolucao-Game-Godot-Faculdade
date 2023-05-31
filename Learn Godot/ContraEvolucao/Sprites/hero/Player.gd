@@ -25,7 +25,7 @@ func PLAYER():
 
 func _physics_process(_delta: float) -> void:
 	if npc_in_range:
-		if Input.is_action_just_pressed("ui_accept"):
+		if Input.is_action_just_pressed("acction_button"):
 			DialogueManager.show_example_dialogue_balloon(load(path_dialogue),"start")
 	
 	if can_attack == false or can_die or Global.NOT_can_move:
@@ -159,7 +159,7 @@ func on_detection_area_body_exited(body):
 
 func _input(event: InputEvent) -> void:
 	if event is InputEventKey:
-		if Input.is_action_just_pressed("status"):
+		if Input.is_action_just_pressed("menu_status"):
 			var cena = scene.instantiate()
 			if Global.scene_can_add:
 				add_child(cena)
