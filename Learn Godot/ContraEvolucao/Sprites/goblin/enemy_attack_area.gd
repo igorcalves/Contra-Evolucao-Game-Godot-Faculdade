@@ -1,7 +1,7 @@
 extends Area2D
 
-@export var damage: int = 1
 
+var damage = 0.5
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	pass

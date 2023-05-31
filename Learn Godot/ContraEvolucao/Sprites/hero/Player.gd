@@ -129,19 +129,17 @@ func on_attack_area_body_entered_Up(body):
 
 
 func on_attack_area_body_entered_Turned(body):
-	print(Global.damage)
 	body.update_health(Global.damage)
 
 func update_health(value: int) -> void:
 	Global.health -= value
-	if Global.health <= 0:
+	if Global.health <2:
 		can_die = true
 		animation.play("Death")
 		attack_area_collision_Down.set_deferred("disabled",true)
 		attack_area_collision_turned.set_deferred("disabled",true)
 		attack_area_collision_Up.set_deferred("disabled",true)
-		Global.health = 0
-
+		Global.health = 10
 		return
 	
 	aux_animation_play.play("hit")
