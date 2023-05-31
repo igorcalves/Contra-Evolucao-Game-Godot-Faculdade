@@ -15,13 +15,11 @@ position = Vector2(-124, -77)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(124, 77)
-scale = Vector2(1, 1)
 shape = SubResource("CircleShape2D_woljl")
 
 [node name="Sprite2D" type="Sprite2D" parent="Area2D"]
 texture_filter = 1
 position = Vector2(123, 77)
-scale = Vector2(1, 1)
 texture = ExtResource("2_8jksb")
 flip_h = true
 

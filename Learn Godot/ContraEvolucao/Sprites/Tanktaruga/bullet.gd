@@ -9,3 +9,4 @@ func _on_area_2d_body_entered(body):
 	body.update_health(damage)
 	if body.has_method("PLAYER"):
 		queue_free()
+		

@@ -174,14 +174,23 @@ theme_override_constants/separation = 20
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_3ctp1")
 theme_override_font_sizes/font_size = 32
-text = "New Game"
+text = "Novo Jogo
+"
+alignment = 2
+
+[node name="Controls" type="Button" parent="ButtonsContainer" groups=["button"]]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_3ctp1")
+theme_override_font_sizes/font_size = 32
+text = "Controles
+"
 alignment = 2
 
 [node name="Quit" type="Button" parent="ButtonsContainer" groups=["button"]]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_3ctp1")
 theme_override_font_sizes/font_size = 32
-text = "Quit
+text = "Fechar o Jogo
 "
 alignment = 2
 

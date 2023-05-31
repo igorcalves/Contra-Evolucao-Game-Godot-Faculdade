@@ -1,6 +1,7 @@
 extends Control
 
 
+const scene: PackedScene = preload("res://ContraEvolucao/controlGuide/control.tscn")
 
 func _ready():
 	
@@ -18,3 +19,6 @@ func on_button_pressed(button_name:String) -> void:
 			transitionScreen.can_quit = true
 			transitionScreen.fade_in()
 			
+		"Controls":
+			var cena = scene.instantiate()
+			add_child(cena)

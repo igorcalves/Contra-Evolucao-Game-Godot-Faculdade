@@ -1,0 +1,140 @@
+[gd_scene load_steps=5 format=3 uid="uid://d1jygypiiaaae"]
+
+[ext_resource type="Script" path="res://ContraEvolucao/controlGuide/control.gd" id="1_5181x"]
+[ext_resource type="Texture2D" uid="uid://kny4w88f453k" path="res://ContraEvolucao/controlGuide/ControlGuideBackGround.png" id="1_qsl1m"]
+[ext_resource type="FontFile" uid="uid://c4fqoidpkapkt" path="res://ContraEvolucao/kurland.ttf" id="2_0p4s5"]
+[ext_resource type="Texture2D" uid="uid://bqbrcfpjuulqq" path="res://ContraEvolucao/controlGuide/MousePixelArt.png" id="4_1oujf"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_top = -76.0
+offset_right = 1078.0
+offset_bottom = 797.0
+script = ExtResource("1_5181x")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 44.0
+offset_top = -2.0
+offset_right = 44.0
+offset_bottom = -2.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_qsl1m")
+
+[node name="Control" type="Control" parent="."]
+anchors_preset = 0
+offset_left = 114.0
+offset_top = 276.0
+offset_right = 154.0
+offset_bottom = 316.0
+
+[node name="WASD" type="Label" parent="Control"]
+layout_mode = 0
+offset_right = 218.0
+offset_bottom = 156.0
+theme_override_fonts/font = ExtResource("2_0p4s5")
+theme_override_font_sizes/font_size = 71
+text = "	    W
+A  S  D
+"
+
+[node name="WASD2" type="Label" parent="Control"]
+layout_mode = 0
+offset_left = 58.0
+offset_top = 183.0
+offset_right = 276.0
+offset_bottom = 339.0
+theme_override_fonts/font = ExtResource("2_0p4s5")
+theme_override_font_sizes/font_size = 71
+text = "E
+"
+
+[node name="WASD3" type="Label" parent="Control"]
+layout_mode = 0
+offset_left = 614.0
+offset_top = 184.0
+offset_right = 832.0
+offset_bottom = 340.0
+theme_override_fonts/font = ExtResource("2_0p4s5")
+theme_override_font_sizes/font_size = 71
+text = "F"
+
+[node name="title" type="Label" parent="Control"]
+layout_mode = 0
+offset_left = 274.0
+offset_top = -116.0
+offset_right = 715.0
+offset_bottom = 40.0
+theme_override_fonts/font = ExtResource("2_0p4s5")
+theme_override_font_sizes/font_size = 71
+text = "Controles
+
+"
+
+[node name="intructions" type="Label" parent="Control"]
+layout_mode = 0
+offset_left = 241.0
+offset_top = -5.0
+offset_right = 500.0
+offset_bottom = 151.0
+theme_override_fonts/font = ExtResource("2_0p4s5")
+theme_override_font_sizes/font_size = 26
+text = "W Andar para cima
+A Andar para Esquerda
+S Andar para Baixo
+D Andar para direita
+
+"
+
+[node name="intructions3" type="Label" parent="Control"]
+layout_mode = 0
+offset_left = 778.0
+offset_top = -67.0
+offset_right = 956.0
+offset_bottom = 88.0
+theme_override_fonts/font = ExtResource("2_0p4s5")
+theme_override_font_sizes/font_size = 26
+text = "
+Ataque"
+
+[node name="intructions2" type="Label" parent="Control"]
+layout_mode = 0
+offset_left = 131.0
+offset_top = 203.0
+offset_right = 390.0
+offset_bottom = 359.0
+theme_override_fonts/font = ExtResource("2_0p4s5")
+theme_override_font_sizes/font_size = 26
+text = "falar com NPCS
+"
+
+[node name="intructions4" type="Label" parent="Control"]
+layout_mode = 0
+offset_left = 684.0
+offset_top = 207.0
+offset_right = 943.0
+offset_bottom = 363.0
+theme_override_fonts/font = ExtResource("2_0p4s5")
+theme_override_font_sizes/font_size = 26
+text = "Abrir Status
+"
+
+[node name="Sprite2D" type="Sprite2D" parent="Control"]
+position = Vector2(695, 48)
+scale = Vector2(8.61532, 8.79746)
+texture = ExtResource("4_1oujf")
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 982.0
+offset_top = 568.0
+offset_right = 1071.0
+offset_bottom = 607.0
+text = "Ok"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
