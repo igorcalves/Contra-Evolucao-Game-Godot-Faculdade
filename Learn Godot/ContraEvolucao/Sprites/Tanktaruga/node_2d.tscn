@@ -1,10 +1,8 @@
-[gd_scene load_steps=11 format=3 uid="uid://bnx47l6xuuy4g"]
+[gd_scene load_steps=9 format=3 uid="uid://crndfpesfug48"]
 
-[ext_resource type="Script" path="res://ContraEvolucao/Sprites/Tanktaruga/CharacterBody2D.gd" id="1_efdj0"]
+[ext_resource type="Script" path="res://ContraEvolucao/Sprites/Tanktaruga/tank_taruga.gd" id="1_efdj0"]
 [ext_resource type="Texture2D" uid="uid://1ro3t0re5bfj" path="res://assets/Enemy 5/Battle_turtle_attack1.png" id="2_yuw12"]
 [ext_resource type="PackedScene" uid="uid://0qb7vbblhhq2" path="res://assets/Coin/hud.tscn" id="3_mpcbh"]
-[ext_resource type="PackedScene" uid="uid://d27bg6eflojlc" path="res://ContraEvolucao/Sprites/Tanktaruga/bullet.tscn" id="4_krrdw"]
-[ext_resource type="PackedScene" uid="uid://by3l0honbb0kd" path="res://ContraEvolucao/Sprites/hero/Player.tscn" id="5_dbpyh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0bxwt"]
 size = Vector2(27.5616, 47.954)
@@ -153,24 +151,16 @@ hframes = 4
 light_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D/Area2D"]
-position = Vector2(175.947, 73.1515)
+position = Vector2(116.304, 76.0899)
 shape = SubResource("RectangleShape2D_0bxwt")
 
 [node name="HUD" parent="CharacterBody2D/Area2D" instance=ExtResource("3_mpcbh")]
 
 [node name="Animated" type="AnimationPlayer" parent="CharacterBody2D"]
-root_node = NodePath("../../bullet")
+root_node = NodePath("")
 libraries = {
 "": SubResource("AnimationLibrary_5vwpv")
 }
-
-[node name="bullet" parent="." instance=ExtResource("4_krrdw")]
-visible = false
-position = Vector2(241, 14)
-
-[node name="Player" parent="." instance=ExtResource("5_dbpyh")]
-position = Vector2(331, 43)
-move_speed = 500.0
 
 [connection signal="body_entered" from="CharacterBody2D/Area2D" to="CharacterBody2D" method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="CharacterBody2D/Area2D" to="CharacterBody2D" method="_on_area_2d_body_exited"]

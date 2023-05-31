@@ -20,7 +20,8 @@ var sides : String = ""
 var npc_in_range = false
 var path_dialogue: String = "res://ContraEvolucao/dialog/primeiro_dialogo.dialogue"
 
-
+func PLAYER():
+	pass
 
 func _physics_process(_delta: float) -> void:
 	if npc_in_range:
