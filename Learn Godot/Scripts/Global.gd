@@ -27,3 +27,4 @@ func increase_health(npc_health: int) ->void:
 func increase_damage(npc_damage: int) -> void:
 	damage += npc_damage
 	add_damage += npc_damage	
+

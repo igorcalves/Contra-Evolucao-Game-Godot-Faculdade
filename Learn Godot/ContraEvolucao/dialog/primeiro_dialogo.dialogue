@@ -5,6 +5,6 @@ Pescador Perdido: Ola aventureiro você chegou ilha desacordado essa ilha pa asd
 	set Global.increase_damage(1)
  - Aumentar Vida
 	set Global.increase_health(1)
-	
+
  - Aumentar Velocidade
 	set Global.increase_speed(1000)
