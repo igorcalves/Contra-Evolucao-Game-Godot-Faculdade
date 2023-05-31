@@ -21,17 +21,12 @@ var npc_in_range = false
 var path_dialogue: String = "res://ContraEvolucao/dialog/primeiro_dialogo.dialogue"
 
 
-@export var health: int = Global.health
-@export var move_speed: float = Global.move_speed
-@export var damage: int = Global.damage
-
 
 func _physics_process(_delta: float) -> void:
 	if npc_in_range:
 		if Input.is_action_just_pressed("ui_accept"):
 			DialogueManager.show_example_dialogue_balloon(load(path_dialogue),"start")
 	
-
 	if can_attack == false or can_die or Global.NOT_can_move:
 		return
 	match_slide()	
@@ -42,7 +37,7 @@ func _physics_process(_delta: float) -> void:
 	
 func move() -> void:
 	var direction: Vector2 = get_direction()
-	velocity = direction * move_speed
+	velocity = direction * Global.move_speed
 	move_and_slide()
 	
 func match_slide() -> void:
@@ -127,18 +122,19 @@ func on_animation_finished(anim_name:String):
 
 # ----------------------attack Functions--------------------------#
 func on_attack_area_body_entered_Down(body):
-	body.update_health(damage)
+	body.update_health(Global.damage)
 
 func on_attack_area_body_entered_Up(body):
-	body.update_health(damage)
+	body.update_health(Global.damage)
 
 
 func on_attack_area_body_entered_Turned(body):
-	body.update_health(damage)
+	print(Global.damage)
+	body.update_health(Global.damage)
 
 func update_health(value: int) -> void:
-	health -= value
-	if health <= 0:
+	Global.health -= value
+	if Global.health <= 0:
 		can_die = true
 		animation.play("Death")
 		attack_area_collision_Down.set_deferred("disabled",true)

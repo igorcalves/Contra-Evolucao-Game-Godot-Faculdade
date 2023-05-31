@@ -12,7 +12,7 @@ var player_ref: CharacterBody2D = null
 var can_die: bool = false
 var kills = 1
 
-@export var health = 3
+@export var health = 10
 @export var move_speed: float = 192.0
 @export var distance_threshold: float = 60.0
 
