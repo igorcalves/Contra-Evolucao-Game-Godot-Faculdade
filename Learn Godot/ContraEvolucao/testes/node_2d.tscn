@@ -1,7 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://c1nogwc81nvba"]
+[gd_scene load_steps=5 format=3 uid="uid://mi6g7afy4q71"]
 
-[ext_resource type="PackedScene" uid="uid://pj504pkkklpk" path="res://ContraEvolucao/Sprites/hero/Player.tscn" id="1_jkkas"]
-[ext_resource type="PackedScene" uid="uid://cull8evox1yv2" path="res://ContraEvolucao/Sprites/npc/character_body_2d.tscn" id="2_6e0oa"]
+[ext_resource type="PackedScene" uid="uid://by3l0honbb0kd" path="res://ContraEvolucao/Sprites/hero/Player.tscn" id="1_jkkas"]
+[ext_resource type="PackedScene" path="res://ContraEvolucao/Sprites/npc/character_body_2d.tscn" id="2_6e0oa"]
 [ext_resource type="PackedScene" uid="uid://0qb7vbblhhq2" path="res://assets/Coin/hud.tscn" id="3_g812x"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_22muh"]

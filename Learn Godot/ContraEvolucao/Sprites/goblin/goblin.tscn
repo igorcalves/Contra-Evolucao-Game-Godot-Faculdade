@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://boh7scucyrto"]
+[gd_scene load_steps=15 format=3 uid="uid://dcthfxtnu8eog"]
 
 [ext_resource type="Script" path="res://ContraEvolucao/Sprites/goblin/goblin.gd" id="1_mugtd"]
 [ext_resource type="Texture2D" uid="uid://cyiu04o8qnvd8" path="res://assets/Factions/Goblins/Torch.png" id="1_w0va2"]
@@ -340,7 +340,6 @@ script = ExtResource("1_mugtd")
 collision_layer = 0
 
 [node name="Colission" type="CollisionShape2D" parent="DetectionArea"]
-visible = false
 position = Vector2(0, 31.5)
 shape = SubResource("CircleShape2D_3uh4p")
 

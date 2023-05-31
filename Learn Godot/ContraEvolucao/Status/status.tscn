@@ -1,0 +1,93 @@
+[gd_scene load_steps=7 format=3 uid="uid://dkmhii7ljsnpk"]
+
+[ext_resource type="Texture2D" uid="uid://bkhkqlqvpdixb" path="res://ContraEvolucao/Status/statusBackGround.png" id="1_de505"]
+[ext_resource type="Script" path="res://ContraEvolucao/Status/status.gd" id="1_r8gul"]
+[ext_resource type="FontFile" uid="uid://c4fqoidpkapkt" path="res://ContraEvolucao/kurland.ttf" id="2_cunfb"]
+[ext_resource type="Script" path="res://ContraEvolucao/Status/AttackLabel.gd" id="3_k81ht"]
+[ext_resource type="Script" path="res://ContraEvolucao/Status/Global_speed.gd" id="4_1b1xg"]
+[ext_resource type="Script" path="res://ContraEvolucao/Status/global_health.gd" id="5_36xfe"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 211.0
+offset_top = 157.0
+offset_right = 211.0
+offset_bottom = 157.0
+scale = Vector2(0.5, 0.5)
+script = ExtResource("1_r8gul")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 32.0
+offset_bottom = 32.0
+scale = Vector2(15.3367, 16.2049)
+texture = ExtResource("1_de505")
+
+[node name="GridContainer" type="GridContainer" parent="."]
+layout_mode = 0
+offset_left = 155.0
+offset_top = 135.0
+offset_right = 366.0
+offset_bottom = 589.0
+scale = Vector2(0.8, 0.8)
+theme_override_constants/h_separation = -5
+theme_override_constants/v_separation = 47
+columns = 2
+
+[node name="Attack" type="Label" parent="GridContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0.952941, 0.886275, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 29
+text = "   ataque:
+"
+
+[node name="global_attack" type="Label" parent="GridContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0.952941, 0.886275, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_cunfb")
+theme_override_font_sizes/font_size = 29
+script = ExtResource("3_k81ht")
+
+[node name="move_speed" type="Label" parent="GridContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0.952941, 0.886275, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 29
+text = "velocidade: "
+
+[node name="Global_speed" type="Label" parent="GridContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0.952941, 0.886275, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_cunfb")
+theme_override_font_sizes/font_size = 29
+script = ExtResource("4_1b1xg")
+
+[node name="extra_health" type="Label" parent="GridContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0.952941, 0.886275, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 29
+text = "Vida Extra: "
+
+[node name="global_health" type="Label" parent="GridContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0.952941, 0.886275, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_cunfb")
+theme_override_font_sizes/font_size = 29
+script = ExtResource("5_36xfe")
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 271.0
+offset_top = 363.0
+offset_right = 314.0
+offset_bottom = 394.0
+theme_override_fonts/font = ExtResource("2_cunfb")
+text = "SAIR"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

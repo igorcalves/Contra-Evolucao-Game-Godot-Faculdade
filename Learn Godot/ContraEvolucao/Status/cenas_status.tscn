@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://8otqgxaj26ke"]
+
+[ext_resource type="PackedScene" uid="uid://dkmhii7ljsnpk" path="res://ContraEvolucao/Status/status.tscn" id="1_dfq65"]
+
+[node name="Node2D" type="Node2D"]
+z_index = 1
+
+[node name="Control" parent="." instance=ExtResource("1_dfq65")]
+offset_left = -111.0
+offset_top = -127.0
+offset_right = -111.0
+offset_bottom = -127.0

@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://cull8evox1yv2"]
+[gd_scene load_steps=4 format=3]
 
 [ext_resource type="Script" path="res://ContraEvolucao/Sprites/npc/CharacterBody2D.gd" id="1_aqgin"]
 [ext_resource type="Texture2D" uid="uid://2rave17htp20" path="res://ContraEvolucao/Sprites/npc/Npc.png" id="2_fpbxw"]

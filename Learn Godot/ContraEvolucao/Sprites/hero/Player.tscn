@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://pj504pkkklpk"]
+[gd_scene load_steps=23 format=3 uid="uid://by3l0honbb0kd"]
 
 [ext_resource type="Script" path="res://ContraEvolucao/Sprites/hero/Player.gd" id="1_mvqct"]
 [ext_resource type="Texture2D" uid="uid://ckkca35xmom2u" path="res://ContraEvolucao/Sprites/hero/player.png" id="2_sgnvu"]

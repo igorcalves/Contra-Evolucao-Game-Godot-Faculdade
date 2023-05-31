@@ -1,9 +1,13 @@
 ~ start
 
-- VOCE QUER ATAQUE CUSTA 10
-		set Global.coins += 10 
-- Mostras
-	set Global.get_coins()
+Pescador Perdido: Ola aventureiro você chegou ilha desacordado essa ilha pa asdiuagsdas das as sa 
+ - Aumentar Ataque
+	set Global.increase_damage(1)
+	- Acabar Conversa
+		=> END!
+ - Aumentar Vida
+	set Global.increase_health(1)
+	
+ - Aumentar Velocidade
+	set Global.increase_speed(1)
 
-- Tchal 
-	=> END

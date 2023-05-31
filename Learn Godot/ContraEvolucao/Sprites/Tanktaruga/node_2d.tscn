@@ -1,0 +1,176 @@
+[gd_scene load_steps=11 format=3 uid="uid://bnx47l6xuuy4g"]
+
+[ext_resource type="Script" path="res://ContraEvolucao/Sprites/Tanktaruga/CharacterBody2D.gd" id="1_efdj0"]
+[ext_resource type="Texture2D" uid="uid://1ro3t0re5bfj" path="res://assets/Enemy 5/Battle_turtle_attack1.png" id="2_yuw12"]
+[ext_resource type="PackedScene" uid="uid://0qb7vbblhhq2" path="res://assets/Coin/hud.tscn" id="3_mpcbh"]
+[ext_resource type="PackedScene" uid="uid://d27bg6eflojlc" path="res://ContraEvolucao/Sprites/Tanktaruga/bullet.tscn" id="4_krrdw"]
+[ext_resource type="PackedScene" uid="uid://by3l0honbb0kd" path="res://ContraEvolucao/Sprites/hero/Player.tscn" id="5_dbpyh"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0bxwt"]
+size = Vector2(27.5616, 47.954)
+
+[sub_resource type="Animation" id="Animation_1gmr5"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../CharacterBody2D/Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(241, 14)]
+}
+
+[sub_resource type="Animation" id="Animation_ycl82"]
+resource_name = "bullet"
+length = 1.4
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../CharacterBody2D/Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8, 1, 1.2, 1.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 0, 1, 2, 3]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.2, 0.4, 0.6, 0.8, 1, 1.2001, 1.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(241, 14), Vector2(200, 14), Vector2(150, 14), Vector2(100, 14), Vector2(50, 14), Vector2(0, 14), Vector2(-50, 14)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.2, 1.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="Animation" id="Animation_1816a"]
+resource_name = "igor"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../CharacterBody2D/Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.3, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.1, 0.3, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(32, 35), Vector2(17, 35), Vector2(5, 35)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_5vwpv"]
+_data = {
+"RESET": SubResource("Animation_1gmr5"),
+"bullet": SubResource("Animation_ycl82"),
+"igor": SubResource("Animation_1816a")
+}
+
+[node name="Node2D" type="Node2D"]
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+light_mask = 0
+texture_filter = 1
+scale = Vector2(3.01795, 2.85189)
+script = ExtResource("1_efdj0")
+
+[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
+position = Vector2(203.667, 61.3333)
+texture = ExtResource("2_yuw12")
+hframes = 4
+
+[node name="Area2D" type="Area2D" parent="CharacterBody2D"]
+light_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D/Area2D"]
+position = Vector2(175.947, 73.1515)
+shape = SubResource("RectangleShape2D_0bxwt")
+
+[node name="HUD" parent="CharacterBody2D/Area2D" instance=ExtResource("3_mpcbh")]
+
+[node name="Animated" type="AnimationPlayer" parent="CharacterBody2D"]
+root_node = NodePath("../../bullet")
+libraries = {
+"": SubResource("AnimationLibrary_5vwpv")
+}
+
+[node name="bullet" parent="." instance=ExtResource("4_krrdw")]
+visible = false
+position = Vector2(241, 14)
+
+[node name="Player" parent="." instance=ExtResource("5_dbpyh")]
+position = Vector2(331, 43)
+move_speed = 500.0
+
+[connection signal="body_entered" from="CharacterBody2D/Area2D" to="CharacterBody2D" method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="CharacterBody2D/Area2D" to="CharacterBody2D" method="_on_area_2d_body_exited"]
