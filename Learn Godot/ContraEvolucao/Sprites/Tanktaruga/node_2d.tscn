@@ -151,7 +151,7 @@ hframes = 4
 light_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D/Area2D"]
-position = Vector2(116.304, 76.0899)
+position = Vector2(163.687, 78.5444)
 shape = SubResource("RectangleShape2D_0bxwt")
 
 [node name="HUD" parent="CharacterBody2D/Area2D" instance=ExtResource("3_mpcbh")]
