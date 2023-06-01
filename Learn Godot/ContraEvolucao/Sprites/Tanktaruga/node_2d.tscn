@@ -1,8 +1,33 @@
-[gd_scene load_steps=9 format=3 uid="uid://crndfpesfug48"]
+[gd_scene load_steps=8 format=3 uid="uid://crndfpesfug48"]
 
-[ext_resource type="Script" path="res://ContraEvolucao/Sprites/Tanktaruga/tank_taruga.gd" id="1_efdj0"]
 [ext_resource type="Texture2D" uid="uid://1ro3t0re5bfj" path="res://assets/Enemy 5/Battle_turtle_attack1.png" id="2_yuw12"]
-[ext_resource type="PackedScene" uid="uid://0qb7vbblhhq2" path="res://assets/Coin/hud.tscn" id="3_mpcbh"]
+
+[sub_resource type="GDScript" id="GDScript_anys1"]
+script/source = "extends CharacterBody2D
+
+@onready var animation: AnimationPlayer = get_node(\"Animated\")
+
+const scene: PackedScene = preload(\"res://ContraEvolucao/Sprites/Tanktaruga/bullet.tscn\")
+
+func _physics_process(delta):
+	pass
+	
+func animated()->void:
+	animation.play(\"bullet\")
+
+
+
+
+func _on_area_2d_body_entered(body):
+	var cena = scene.instantiate()
+	cena.position  = Vector2i(0,0)
+	add_child(cena)
+
+
+func _on_area_2d_body_exited(body):
+	animation.play(\"RESET\")
+
+"
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0bxwt"]
 size = Vector2(27.5616, 47.954)
@@ -135,12 +160,14 @@ _data = {
 }
 
 [node name="Node2D" type="Node2D"]
+position = Vector2(3, 7)
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="."]
 light_mask = 0
 texture_filter = 1
+position = Vector2(-647, -217)
 scale = Vector2(3.01795, 2.85189)
-script = ExtResource("1_efdj0")
+script = SubResource("GDScript_anys1")
 
 [node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
 position = Vector2(203.667, 61.3333)
@@ -154,8 +181,6 @@ light_mask = 0
 position = Vector2(163.687, 78.5444)
 shape = SubResource("RectangleShape2D_0bxwt")
 
-[node name="HUD" parent="CharacterBody2D/Area2D" instance=ExtResource("3_mpcbh")]
-
 [node name="Animated" type="AnimationPlayer" parent="CharacterBody2D"]
 root_node = NodePath("")
 libraries = {
@@ -164,3 +189,4 @@ libraries = {
 
 [connection signal="body_entered" from="CharacterBody2D/Area2D" to="CharacterBody2D" method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="CharacterBody2D/Area2D" to="CharacterBody2D" method="_on_area_2d_body_exited"]
+[connection signal="animation_finished" from="CharacterBody2D/Animated" to="CharacterBody2D" method="_on_animated_animation_finished"]

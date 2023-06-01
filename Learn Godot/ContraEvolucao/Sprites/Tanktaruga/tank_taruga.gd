@@ -1,22 +1,84 @@
 extends CharacterBody2D
 
-@onready var animation: AnimationPlayer = get_node("Animated")
 
-const scene: PackedScene = preload("res://ContraEvolucao/Sprites/Tanktaruga/bullet.tscn")
+const bullet_scene: PackedScene = preload("res://ContraEvolucao/Sprites/Tanktaruga/bullet.tscn")
+const OFFSET: Vector2 = Vector2(0,7)
 
-func _physics_process(delta):
-	pass
+@onready var animation: AnimationPlayer = get_node("Animation")
+@onready var texture: Sprite2D = get_node("Texture")
+
+
+var player_ref: CharacterBody2D = null
+var can_die: bool = false
+var kills = 1
+
+@export var health = 5
+@export var move_speed: float = 192.0
+@export var distance_threshold: float = 60.0
+
+
+func _physics_process(_delta: float) -> void:
+	if can_die:
+		return
+	if player_ref == null or player_ref.can_die:
+		velocity = Vector2.ZERO
+		animate()
+		return
+		
+	var direction: Vector2 = global_position.direction_to(player_ref.global_position)
+	var distance: float = global_position.distance_to(player_ref.global_position)
 	
-func animated()->void:
-	animation.play("bullet")
+	if distance < distance_threshold:
+		animation.play("attack")
+		return
+	
+	velocity = direction * move_speed
+	move_and_slide()
+
+	
+func animate() ->void:
+	if velocity.x > 0:
+		texture.flip_h = false
+
+	if velocity.x < 0:
+		texture.flip_h = true
+	
+	if velocity != Vector2.ZERO:
+		animation.play("run")
+		return
+	
+#	animation.play("idle")	
+	
+func update_health(value: int) -> void:
+	health -= value
+	if health<= 0:
+		can_die = true
+		animation.play("death")
+		Global.kills += kills
+		
+		return
+
+func spawn_bullet():
+	call_deferred("_add_bullet_scene")
+	
+func animate1():
+	animation.play("Attack_3")
 
 
 
+func _on_detection_area_2d_body_entered(body):
+	if body.has_method("NPC"):
+		return
+	player_ref = body
+	animate1()
 
-func _on_area_2d_body_entered(body):
-	var cena = scene.instantiate()
-	add_child(cena)
+
+func _on_detection_area_2d_body_exited(body):
+	player_ref = null
+	animation.stop()
 
 
-func _on_area_2d_body_exited(body):
-	animation.play("RESET")
+func _add_bullet_scene():
+	var scene = bullet_scene.instantiate()
+	scene.position = OFFSET
+	add_child(scene)
