@@ -6,7 +6,7 @@ const OFFSET: Vector2 = Vector2(0,31)
 @onready var animation: AnimationPlayer = get_node("Animation")
 @onready var aux_animation_player: AnimationPlayer = get_node("AuxAnimationPlayer")
 @onready var texture: Sprite2D = get_node("Texture")
-
+@onready var collision: CollisionShape2D = get_node("Collision")
 
 var player_ref: CharacterBody2D = null
 var can_die: bool = false
@@ -45,9 +45,11 @@ func spawn_attack_area() -> void:
 func animate() ->void:
 	if velocity.x > 0:
 		texture.flip_h = false
+		collision.position = Vector2i(-20,14)
 
 	if velocity.x < 0:
 		texture.flip_h = true
+		collision.position = Vector2i(33,14)
 	
 	if velocity != Vector2.ZERO:
 		animation.play("walk")
