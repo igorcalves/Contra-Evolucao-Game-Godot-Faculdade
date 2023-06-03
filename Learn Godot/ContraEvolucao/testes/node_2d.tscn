@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://mi6g7afy4q71"]
+[gd_scene load_steps=8 format=3 uid="uid://mi6g7afy4q71"]
 
 [ext_resource type="PackedScene" uid="uid://by3l0honbb0kd" path="res://ContraEvolucao/Sprites/hero/Player.tscn" id="1_jkkas"]
 [ext_resource type="PackedScene" path="res://ContraEvolucao/Sprites/npc/character_body_2d.tscn" id="2_6e0oa"]
 [ext_resource type="PackedScene" uid="uid://0qb7vbblhhq2" path="res://assets/Coin/hud.tscn" id="3_g812x"]
 [ext_resource type="PackedScene" uid="uid://dcthfxtnu8eog" path="res://ContraEvolucao/Sprites/goblin/goblin.tscn" id="4_tddo8"]
 [ext_resource type="PackedScene" uid="uid://c4jv0dcguxqfg" path="res://Inimigos/Kuy/kuy.tscn" id="5_jbjor"]
+[ext_resource type="PackedScene" uid="uid://6qmgt12i33a4" path="res://Inimigos/FundiçãoHumana/fundicão_humana.tscn" id="6_71bxn"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_22muh"]
 size = Vector2(394, 342)
@@ -34,4 +35,7 @@ position = Vector2(6, 380)
 position = Vector2(1471, 346)
 
 [node name="Kuy" parent="." instance=ExtResource("5_jbjor")]
-position = Vector2(-823, 224)
+position = Vector2(-1243, 426)
+
+[node name="FundicãoHumana" parent="." instance=ExtResource("6_71bxn")]
+position = Vector2(-33, 88)

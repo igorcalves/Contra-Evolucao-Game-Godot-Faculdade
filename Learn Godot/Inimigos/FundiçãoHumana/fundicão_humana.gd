@@ -50,7 +50,7 @@ func animate() ->void:
 		texture.flip_h = true
 	
 	if velocity != Vector2.ZERO:
-		animation.play("run")
+		animation.play("walk")
 		return
 	
 	animation.play("idle")	
@@ -62,9 +62,8 @@ func update_health(value: int) -> void:
 		animation.play("death")
 		Global.kills += kills
 		
-		return
+		return		
 	aux_animation_player.play("hit")
-	
 func on_detection_area_body_entered(body):
 	if body.has_method("NPC"):
 		return
