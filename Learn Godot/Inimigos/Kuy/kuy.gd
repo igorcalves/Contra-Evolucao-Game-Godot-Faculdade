@@ -6,13 +6,16 @@ const OFFSET: Vector2 = Vector2(0,31)
 @onready var animation: AnimationPlayer = get_node("Animation")
 @onready var aux_animation_player: AnimationPlayer = get_node("AuxAnimationPlayer")
 @onready var texture: Sprite2D = get_node("Texture")
+@onready var collision: CollisionShape2D = get_node("Collision")
 
 
 var player_ref: CharacterBody2D = null
 var can_die: bool = false
 var kills = 1
+var alter_attack = true
 
-@export var health = 3
+
+@export var health = 10
 @export var move_speed: float = 192.0
 @export var distance_threshold: float = 60.0
 
@@ -29,13 +32,17 @@ func _physics_process(_delta: float) -> void:
 	var distance: float = global_position.distance_to(player_ref.global_position)
 	
 	if distance < distance_threshold:
-		animation.play("attack")
-		return
+		if alter_attack:
+			animation.play("attack1")
+			return
+		if alter_attack == false:
+			animation.play("attack2")
+			return
+
 	
 	velocity = direction * move_speed
 	move_and_slide()
 	animate()
-	
 	
 func spawn_attack_area() -> void:
 	var attack_area = ATTACK_AREA.instantiate()
@@ -44,13 +51,14 @@ func spawn_attack_area() -> void:
 	
 func animate() ->void:
 	if velocity.x > 0:
-		texture.flip_h = false
+		texture.flip_h = true
+		collision.position = Vector2i(-11,14)
 
 	if velocity.x < 0:
-		texture.flip_h = true
-	
+		texture.flip_h = false
+		collision.position = Vector2i(20,14)
 	if velocity != Vector2.ZERO:
-		animation.play("run")
+		animation.play("walk")
 		return
 	
 	animation.play("idle")	
@@ -76,3 +84,8 @@ func on_detection_area_body_exited(_body):
 func on_animation_animation_finished(anim_name):
 	if anim_name == "death":
 		queue_free()
+	if anim_name == "attack1":
+		alter_attack = false
+		print(alter_attack)
+	if anim_name == "attack2":
+		alter_attack = true

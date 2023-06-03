@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://mi6g7afy4q71"]
+[gd_scene load_steps=7 format=3 uid="uid://mi6g7afy4q71"]
 
 [ext_resource type="PackedScene" uid="uid://by3l0honbb0kd" path="res://ContraEvolucao/Sprites/hero/Player.tscn" id="1_jkkas"]
 [ext_resource type="PackedScene" path="res://ContraEvolucao/Sprites/npc/character_body_2d.tscn" id="2_6e0oa"]
 [ext_resource type="PackedScene" uid="uid://0qb7vbblhhq2" path="res://assets/Coin/hud.tscn" id="3_g812x"]
 [ext_resource type="PackedScene" uid="uid://dcthfxtnu8eog" path="res://ContraEvolucao/Sprites/goblin/goblin.tscn" id="4_tddo8"]
+[ext_resource type="PackedScene" uid="uid://c4jv0dcguxqfg" path="res://Inimigos/Kuy/kuy.tscn" id="5_jbjor"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_22muh"]
 size = Vector2(394, 342)
@@ -15,6 +16,7 @@ position = Vector2(453, 410)
 collision_layer = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(255, 124)
 shape = SubResource("RectangleShape2D_22muh")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -28,4 +30,7 @@ position = Vector2(28, 10)
 [node name="HUD" parent="." instance=ExtResource("3_g812x")]
 
 [node name="Goblin" parent="." instance=ExtResource("4_tddo8")]
-position = Vector2(650, 129)
+position = Vector2(1471, 346)
+
+[node name="Kuy" parent="." instance=ExtResource("5_jbjor")]
+position = Vector2(-823, 224)
