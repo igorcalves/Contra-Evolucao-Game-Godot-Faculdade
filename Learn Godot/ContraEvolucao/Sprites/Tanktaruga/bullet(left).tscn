@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://dgc5e85r5rmrp"]
+[gd_scene load_steps=7 format=3 uid="uid://bro0i1dhj8uxc"]
 
 [ext_resource type="Script" path="res://ContraEvolucao/Sprites/Tanktaruga/bullet.gd" id="1_ewav5"]
 [ext_resource type="Texture2D" uid="uid://op1thurp8pka" path="res://assets/Enemy 5/Bullet1.png" id="2_8jksb"]

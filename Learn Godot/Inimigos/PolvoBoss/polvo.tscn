@@ -8,10 +8,10 @@
 [ext_resource type="Texture2D" uid="uid://cxky6sal3kh5v" path="res://Inimigos/PolvoBoss/Hurt.png" id="5_f50ui"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_645sw"]
-radius = 77.2334
+radius = 76.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_jhvg8"]
-radius = 500.0
+radius = 274.591
 
 [sub_resource type="Animation" id="Animation_5dcnm"]
 length = 0.001
@@ -678,14 +678,14 @@ script = ExtResource("1_frdjn")
 move_speed = 230.0
 
 [node name="Collision" type="CollisionShape2D" parent="."]
-position = Vector2(-62, 86)
+position = Vector2(-74, 91)
 shape = SubResource("CircleShape2D_645sw")
 
 [node name="DetectionArea" type="Area2D" parent="."]
 position = Vector2(-62, 86)
 
 [node name="CollisionDetection" type="CollisionShape2D" parent="DetectionArea"]
-position = Vector2(4, 1)
+position = Vector2(-11, 6)
 shape = SubResource("CircleShape2D_jhvg8")
 
 [node name="Texture" type="Sprite2D" parent="."]
