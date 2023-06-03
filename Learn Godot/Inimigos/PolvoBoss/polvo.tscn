@@ -8,10 +8,10 @@
 [ext_resource type="Texture2D" uid="uid://cxky6sal3kh5v" path="res://Inimigos/PolvoBoss/Hurt.png" id="5_f50ui"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_645sw"]
-radius = 77.2334
+radius = 69.0163
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_jhvg8"]
-radius = 500.0
+radius = 455.046
 
 [sub_resource type="Animation" id="Animation_5dcnm"]
 length = 0.001
@@ -63,6 +63,18 @@ tracks/3/keys = {
 "update": 1,
 "values": [0]
 }
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Collision:disabled")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
 [sub_resource type="Animation" id="Animation_ggk6m"]
 resource_name = "attack"
@@ -76,7 +88,7 @@ tracks/0/path = NodePath("Texture:texture")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0.7),
+"times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [ExtResource("3_uh2cm")]
@@ -88,7 +100,7 @@ tracks/1/path = NodePath("Texture:hframes")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0.7),
+"times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [6]
@@ -100,7 +112,7 @@ tracks/2/path = NodePath("Texture:vframes")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0.7),
+"times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [1]
@@ -112,15 +124,28 @@ tracks/3/path = NodePath("Texture:frame")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0, 0.11, 0.22, 0.33, 0.36, 0.48, 0.6),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.11, 0.22, 0.33, 0.48, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
 "update": 1,
-"values": [0, 1, 2, 3, 3, 4, 5]
+"values": [0, 1, 2, 3, 4, 5]
+}
+tracks/4/type = "method"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath(".")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0.34),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"spawn_attack_area"
+}]
 }
 
 [sub_resource type="Animation" id="Animation_sluod"]
 resource_name = "death"
-loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -168,6 +193,18 @@ tracks/3/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
 "update": 1,
 "values": [0, 1, 2, 3, 4, 5]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Collision:disabled")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
 }
 
 [sub_resource type="Animation" id="Animation_gdvmw"]
@@ -392,6 +429,18 @@ tracks/3/keys = {
 "update": 1,
 "values": [0]
 }
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Texture:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
 
 [sub_resource type="Animation" id="Animation_fpecr"]
 resource_name = "attack"
@@ -503,55 +552,19 @@ tracks/3/keys = {
 
 [sub_resource type="Animation" id="Animation_w2kbl"]
 resource_name = "hit"
-length = 0.5
+length = 0.22
 step = 0.01
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Texture:texture")
+tracks/0/path = NodePath("Texture:modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(1),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [ExtResource("5_f50ui")]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Texture:hframes")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(1),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [2]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Texture:vframes")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(1),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [1]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("Texture:frame")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.46),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 1,
-"values": [0, 1, 0]
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0.0627451, 1, 0.470588, 1), Color(1, 1, 1, 1)]
 }
 
 [sub_resource type="Animation" id="Animation_xmwds"]
@@ -673,23 +686,30 @@ _data = {
 }
 
 [node name="Polvo" type="CharacterBody2D"]
-position = Vector2(587, 329)
+position = Vector2(-2, 2)
+scale = Vector2(2, 2)
+collision_layer = 6
+collision_mask = 5
 script = ExtResource("1_frdjn")
 move_speed = 230.0
 
+[node name="Timer" type="Timer" parent="."]
+wait_time = 5.0
+autostart = true
+
 [node name="Collision" type="CollisionShape2D" parent="."]
-position = Vector2(-62, 86)
+position = Vector2(-18, 4)
 shape = SubResource("CircleShape2D_645sw")
 
 [node name="DetectionArea" type="Area2D" parent="."]
 position = Vector2(-62, 86)
 
 [node name="CollisionDetection" type="CollisionShape2D" parent="DetectionArea"]
-position = Vector2(4, 1)
+position = Vector2(62, -87)
 shape = SubResource("CircleShape2D_jhvg8")
 
 [node name="Texture" type="Sprite2D" parent="."]
-position = Vector2(-60, 86)
+position = Vector2(0, -0.999998)
 scale = Vector2(4.03125, 3.82292)
 texture = ExtResource("1_oe48o")
 hframes = 6
@@ -704,6 +724,7 @@ libraries = {
 "": SubResource("AnimationLibrary_iw0le")
 }
 
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="body_entered" from="DetectionArea" to="." method="on_detection_area_body_entered"]
 [connection signal="body_exited" from="DetectionArea" to="." method="on_detection_area_body_exited"]
 [connection signal="animation_finished" from="Animation" to="." method="on_animation_animation_finished"]

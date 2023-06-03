@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://cabr8xrfqwjwx"]
+[gd_scene load_steps=7 format=3 uid="uid://cabr8xrfqwjwx"]
 
-[ext_resource type="Texture2D" path="res://Inimigos/PolvoBoss/attack(1).png" id="1_8xp3p"]
+[ext_resource type="Texture2D" uid="uid://b8db63smsq4e5" path="res://Inimigos/PolvoBoss/attack(1).png" id="1_8xp3p"]
+[ext_resource type="Script" path="res://Inimigos/PolvoBoss/attack.gd" id="1_en2jj"]
 
 [sub_resource type="Animation" id="Animation_pug4g"]
 length = 0.001
@@ -31,20 +32,31 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Sprite2D:flip_h")
+tracks/2/path = NodePath("Sprite2D:position")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Area2D:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
 }
 
 [sub_resource type="Animation" id="Animation_fh3kk"]
 resource_name = "new"
-length = 0.65
-loop_mode = 1
+length = 2.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -64,22 +76,34 @@ tracks/1/path = NodePath("Sprite2D:frame")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.2),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8, 1, 1.2, 1.4, 1.6, 1.8, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
-"values": [0, 1]
+"values": [0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Sprite2D:flip_h")
+tracks/2/path = NodePath("Sprite2D:position")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.2),
+"times": PackedFloat32Array(0.0001, 2),
 "transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [false, true]
+"update": 0,
+"values": [Vector2(0, 0), Vector2(-1000, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Area2D:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(-1000, 0)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ce54g"]
@@ -88,15 +112,30 @@ _data = {
 "new": SubResource("Animation_fh3kk")
 }
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ff8lf"]
+size = Vector2(53.5, 578)
+
 [node name="Attack(1)" type="Node2D"]
-position = Vector2(476, 437)
+position = Vector2(0, 2)
+script = ExtResource("1_en2jj")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(-114, -124)
 texture = ExtResource("1_8xp3p")
+flip_h = true
 hframes = 2
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "new"
+speed_scale = 1.5
 libraries = {
 "": SubResource("AnimationLibrary_ce54g")
 }
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-3.75, -5)
+shape = SubResource("RectangleShape2D_ff8lf")
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
+[connection signal="body_entered" from="Area2D" to="." method="on_body_entered"]
