@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://fe6qxqulipqr"]
+
+[ext_resource type="Script" path="res://Inimigos/Tartarian/enemy_attack_area_tartarian.gd" id="1_iryrb"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_a2x7k"]
+radius = 58.5491
+
+[node name="EnemyAttackArea" type="Area2D"]
+script = ExtResource("1_iryrb")
+
+[node name="Collision" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_a2x7k")
+
+[node name="Lifetime" type="Timer" parent="."]
+
+[connection signal="body_entered" from="." to="." method="on_body_entered"]
+[connection signal="timeout" from="Lifetime" to="." method="on_lifetime_timeout"]

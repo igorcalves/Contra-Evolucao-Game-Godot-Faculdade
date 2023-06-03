@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://caun6jligtcem"]
+
+[ext_resource type="Script" path="res://Inimigos/FundiçãoHumana/enemy_attack_area_fundhum.gd" id="1_662sv"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_lfq76"]
+radius = 50.1597
+
+[node name="EnemyAttackArea" type="Area2D"]
+script = ExtResource("1_662sv")
+
+[node name="Collision" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_lfq76")
+
+[node name="Lifetime" type="Timer" parent="."]
+
+[connection signal="body_entered" from="." to="." method="on_body_entered"]
+[connection signal="timeout" from="Lifetime" to="." method="on_lifetime_timeout"]
