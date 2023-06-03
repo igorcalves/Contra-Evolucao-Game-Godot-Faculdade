@@ -86,6 +86,5 @@ func on_animation_animation_finished(anim_name):
 		queue_free()
 	if anim_name == "attack1":
 		alter_attack = false
-		print(alter_attack)
 	if anim_name == "attack2":
 		alter_attack = true

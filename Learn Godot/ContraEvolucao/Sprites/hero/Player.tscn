@@ -269,13 +269,13 @@ _data = {
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8qt2h"]
-size = Vector2(19, 11.1667)
+size = Vector2(19, 25.1666)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fpxrl"]
-size = Vector2(21, 19.3333)
+size = Vector2(21, 30.3333)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_igweu"]
-size = Vector2(14.4791, 19)
+size = Vector2(25.1458, 19)
 
 [sub_resource type="Animation" id="Animation_220nh"]
 length = 0.001
@@ -345,7 +345,7 @@ collision_layer = 0
 collision_mask = 2
 
 [node name="ColissitonAreaAttackDown" type="CollisionShape2D" parent="AttackDownArea"]
-position = Vector2(2.5, 22.4167)
+position = Vector2(2.5, 29.4167)
 shape = SubResource("RectangleShape2D_8qt2h")
 disabled = true
 
@@ -354,7 +354,7 @@ collision_layer = 0
 collision_mask = 2
 
 [node name="ColissitonAreaAttackUp" type="CollisionShape2D" parent="AttackUpArea"]
-position = Vector2(0.5, 0.333333)
+position = Vector2(0.5, -5.16668)
 shape = SubResource("RectangleShape2D_fpxrl")
 disabled = true
 
@@ -363,7 +363,7 @@ collision_layer = 0
 collision_mask = 2
 
 [node name="ColissitonAreaAttackTurned" type="CollisionShape2D" parent="AttackTurnedArea"]
-position = Vector2(13.4271, 11.5)
+position = Vector2(18.7604, 11.5)
 shape = SubResource("RectangleShape2D_igweu")
 disabled = true
 
@@ -380,7 +380,6 @@ light_mask = 16
 visibility_layer = 16
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="detectionArea"]
-position = Vector2(0.666667, 9.66667)
 shape = SubResource("CircleShape2D_ijo5d")
 
 [connection signal="animation_finished" from="Animation" to="." method="on_animation_finished"]

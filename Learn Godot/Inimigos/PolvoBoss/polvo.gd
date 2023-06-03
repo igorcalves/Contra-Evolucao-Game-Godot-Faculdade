@@ -2,6 +2,7 @@ extends CharacterBody2D
 
 const ATTACK_AREA: PackedScene = preload("res://ContraEvolucao/Sprites/goblin/enemy_attack_area.tscn")
 const attack_weaves: PackedScene = preload("res://Inimigos/PolvoBoss/attack.tscn")
+const attack_weaves_left: PackedScene = preload("res://Inimigos/PolvoBoss/attack(left).tscn")
 const OFFSET: Vector2 = Vector2(0,31)
 
 @onready var animation: AnimationPlayer = get_node("Animation")
@@ -13,6 +14,8 @@ var player_ref: CharacterBody2D = null
 var can_die: bool = false
 var kills = 1
 var special_attack: bool = false
+var change_side = false
+
 
 @export var health = 4
 @export var move_speed: float = 180.0
@@ -37,14 +40,26 @@ func _physics_process(_delta: float) -> void:
 		animation.play("attack")
 		return
 	if special_attack:
+		spawn_attack_weave()
+	velocity = direction * move_speed
+	move_and_slide()
+	animate()
+	
+
+func spawn_attack_weave():
+	if change_side:
 		var scene_attack = attack_weaves.instantiate()
 		scene_attack.position = Vector2(0,0)
 		add_child(scene_attack)
 		special_attack = false
 		return
-	velocity = direction * move_speed
-	move_and_slide()
-	animate()
+		
+	if change_side == false:
+		var scene_attack = attack_weaves_left.instantiate()
+		scene_attack.position = Vector2(0,0)
+		add_child(scene_attack)
+		special_attack = false
+		return
 	
 	
 func spawn_attack_area() -> void:
@@ -56,11 +71,13 @@ func animate() ->void:
 	if velocity.x > 0:
 		texture.flip_h = false
 		collision.position = Vector2i(-20,14)
-
+		change_side = false
+		
 	if velocity.x < 0:
 		texture.flip_h = true
 		collision.position = Vector2i(33,14)
-	
+		change_side = true
+		
 	if velocity != Vector2.ZERO:
 		animation.play("walk")
 		return

@@ -1,8 +1,7 @@
-[gd_scene load_steps=79 format=3 uid="uid://crvf1drqjqry3"]
+[gd_scene load_steps=82 format=3 uid="uid://crvf1drqjqry3"]
 
 [ext_resource type="Script" path="res://ContraEvolucao/management/Terrain.gd" id="1_oj5xr"]
 [ext_resource type="Texture2D" uid="uid://cj04hyx4pu447" path="res://assets/Terrain/Ground/Grass_Flat.png" id="1_pvoef"]
-[ext_resource type="PackedScene" uid="uid://dcthfxtnu8eog" path="res://ContraEvolucao/Sprites/goblin/goblin.tscn" id="1_sex5k"]
 [ext_resource type="Texture2D" uid="uid://b73einysgfe0d" path="res://assets/Terrain/Water/Water.png" id="2_hi377"]
 [ext_resource type="Texture2D" uid="uid://df66nirgt2yae" path="res://ContraEvolucao/decoration/grass_tileset.png" id="2_xhq05"]
 [ext_resource type="Texture2D" uid="uid://cqks8emkawe1p" path="res://assets/Terrain/Decorations/Bush_01.png" id="4_61pgb"]
@@ -20,7 +19,11 @@
 [ext_resource type="PackedScene" uid="uid://q6icegs6elvv" path="res://ContraEvolucao/decoration/plates_2d.tscn" id="16_n68ma"]
 [ext_resource type="Texture2D" uid="uid://cve2axukwq1bj" path="res://assets/plates/plateRL.png" id="17_embxl"]
 [ext_resource type="PackedScene" uid="uid://dw6f3mv0s1rar" path="res://ContraEvolucao/management/HUD.tscn" id="20_iun7d"]
+[ext_resource type="PackedScene" uid="uid://c4jv0dcguxqfg" path="res://Inimigos/Kuy/kuy.tscn" id="20_xjowx"]
+[ext_resource type="PackedScene" uid="uid://6qmgt12i33a4" path="res://Inimigos/FundiçãoHumana/fundicão_humana.tscn" id="21_3on87"]
 [ext_resource type="PackedScene" uid="uid://ca2yvvr3ap8co" path="res://assets/Coin/coin.tscn" id="21_p1snt"]
+[ext_resource type="PackedScene" uid="uid://j7gea75kscfi" path="res://Inimigos/PolvoBoss/polvo.tscn" id="22_86k83"]
+[ext_resource type="PackedScene" uid="uid://dvd6xm80ht3it" path="res://ContraEvolucao/Sprites/Tanktaruga/tank_taruga.tscn" id="23_b0mic"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7nl3u"]
 texture = ExtResource("2_xhq05")
@@ -6236,12 +6239,70 @@ shape = SubResource("RectangleShape2D_70t3q")
 [node name="Sprites" type="Node2D" parent="."]
 z_index = -1
 
-[node name="Goblin" parent="Sprites" instance=ExtResource("1_sex5k")]
-position = Vector2(164, 344)
-
 [node name="Player" parent="Sprites" instance=ExtResource("5_qo5gy")]
 z_index = 0
 position = Vector2(-144, 311)
+
+[node name="Kuy" type="Node2D" parent="Sprites"]
+
+[node name="Kuy" parent="Sprites/Kuy" instance=ExtResource("20_xjowx")]
+position = Vector2(651, 1175)
+
+[node name="Kuy2" parent="Sprites/Kuy" instance=ExtResource("20_xjowx")]
+position = Vector2(743, 1722)
+
+[node name="Kuy3" parent="Sprites/Kuy" instance=ExtResource("20_xjowx")]
+position = Vector2(-403, 1975)
+
+[node name="fundiçao_humana" type="Node2D" parent="Sprites"]
+
+[node name="FundicãoHumana" parent="Sprites/fundiçao_humana" instance=ExtResource("21_3on87")]
+position = Vector2(22, 629)
+
+[node name="FundicãoHumana2" parent="Sprites/fundiçao_humana" instance=ExtResource("21_3on87")]
+position = Vector2(644, 558)
+
+[node name="FundicãoHumana6" parent="Sprites/fundiçao_humana" instance=ExtResource("21_3on87")]
+position = Vector2(3420, 1316)
+
+[node name="FundicãoHumana7" parent="Sprites/fundiçao_humana" instance=ExtResource("21_3on87")]
+position = Vector2(3308, 686)
+
+[node name="FundicãoHumana8" parent="Sprites/fundiçao_humana" instance=ExtResource("21_3on87")]
+position = Vector2(1231, 163)
+
+[node name="FundicãoHumana3" parent="Sprites/fundiçao_humana" instance=ExtResource("21_3on87")]
+position = Vector2(-452, 1196)
+
+[node name="FundicãoHumana4" parent="Sprites/fundiçao_humana" instance=ExtResource("21_3on87")]
+position = Vector2(611, 3053)
+
+[node name="FundicãoHumana5" parent="Sprites/fundiçao_humana" instance=ExtResource("21_3on87")]
+position = Vector2(1211, 2549)
+
+[node name="Boss" type="Node2D" parent="Sprites"]
+
+[node name="Polvo" parent="Sprites/Boss" instance=ExtResource("22_86k83")]
+position = Vector2(2178, 1078)
+
+[node name="Tank_taruga" type="Node2D" parent="Sprites"]
+
+[node name="tank_taruga" parent="Sprites/Tank_taruga" instance=ExtResource("23_b0mic")]
+position = Vector2(2180, 3004)
+
+[node name="tank_taruga2" parent="Sprites/Tank_taruga" instance=ExtResource("23_b0mic")]
+position = Vector2(2940, 2400)
+
+[node name="tank_taruga3" parent="Sprites/Tank_taruga" instance=ExtResource("23_b0mic")]
+position = Vector2(3992, 2384)
+
+[node name="tank_taruga4" parent="Sprites/Tank_taruga" instance=ExtResource("23_b0mic")]
+position = Vector2(4380, 1668)
+
+[node name="tank_taruga5" parent="Sprites/Tank_taruga" instance=ExtResource("23_b0mic")]
+position = Vector2(3472, -56)
+
+[node name="Node2D2" type="Node2D" parent="Sprites"]
 
 [node name="coins" type="Node" parent="."]
 
