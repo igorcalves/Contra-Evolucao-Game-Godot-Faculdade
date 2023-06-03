@@ -1,20 +1,25 @@
 extends CharacterBody2D
 
 const ATTACK_AREA: PackedScene = preload("res://ContraEvolucao/Sprites/goblin/enemy_attack_area.tscn")
+const attack_weaves: PackedScene = preload("res://Inimigos/PolvoBoss/attack.tscn")
 const OFFSET: Vector2 = Vector2(0,31)
 
 @onready var animation: AnimationPlayer = get_node("Animation")
 @onready var aux_animation_player: AnimationPlayer = get_node("AuxAnimationPlayer")
 @onready var texture: Sprite2D = get_node("Texture")
-
+@onready var collision: CollisionShape2D = get_node("Collision")
 
 var player_ref: CharacterBody2D = null
 var can_die: bool = false
 var kills = 1
+var special_attack: bool = false
 
-@export var health = 7
-@export var move_speed: float = 200.0
-@export var distance_threshold: float = 60.0
+@export var health = 4
+@export var move_speed: float = 180.0
+@export var distance_threshold: float = 1800
+
+
+
 
 
 func _physics_process(_delta: float) -> void:
@@ -28,10 +33,15 @@ func _physics_process(_delta: float) -> void:
 	var direction: Vector2 = global_position.direction_to(player_ref.global_position)
 	var distance: float = global_position.distance_to(player_ref.global_position)
 	
-	if distance < distance_threshold:
+	if distance < 160:
 		animation.play("attack")
 		return
-	
+	if special_attack:
+		var scene_attack = attack_weaves.instantiate()
+		scene_attack.position = Vector2(0,0)
+		add_child(scene_attack)
+		special_attack = false
+		return
 	velocity = direction * move_speed
 	move_and_slide()
 	animate()
@@ -45,15 +55,17 @@ func spawn_attack_area() -> void:
 func animate() ->void:
 	if velocity.x > 0:
 		texture.flip_h = false
+		collision.position = Vector2i(-20,14)
 
 	if velocity.x < 0:
 		texture.flip_h = true
+		collision.position = Vector2i(33,14)
 	
 	if velocity != Vector2.ZERO:
 		animation.play("walk")
 		return
 	
-	animation.play("idle")
+	animation.play("idle")	
 	
 func update_health(value: int) -> void:
 	health -= value
@@ -62,9 +74,8 @@ func update_health(value: int) -> void:
 		animation.play("death")
 		Global.kills += kills
 		
-		return
+		return		
 	aux_animation_player.play("hit")
-	
 func on_detection_area_body_entered(body):
 	if body.has_method("NPC"):
 		return
@@ -76,3 +87,7 @@ func on_detection_area_body_exited(_body):
 func on_animation_animation_finished(anim_name):
 	if anim_name == "death":
 		queue_free()
+
+
+func _on_timer_timeout():
+	special_attack = true

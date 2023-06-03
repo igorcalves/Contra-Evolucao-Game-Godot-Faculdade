@@ -38,8 +38,8 @@ position = Vector2(1471, 346)
 [node name="Kuy" parent="." instance=ExtResource("5_jbjor")]
 position = Vector2(-1243, 426)
 
+[node name="Polvo" parent="." instance=ExtResource("7_ii2kk")]
+position = Vector2(1232, -19)
+
 [node name="FundicãoHumana" parent="." instance=ExtResource("6_71bxn")]
 position = Vector2(-881, 463)
-
-[node name="Polvo" parent="FundicãoHumana" instance=ExtResource("7_ii2kk")]
-position = Vector2(1550, -625)

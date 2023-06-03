@@ -3,7 +3,7 @@ extends Node
 var coins = 0
 var kills = 0
 var health = 10
-var move_speed = 256
+var move_speed = 800
 var damage = 1
 var add_speed = 0
 var add_healh = 0
