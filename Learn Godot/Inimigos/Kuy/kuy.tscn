@@ -8,11 +8,11 @@
 [ext_resource type="Texture2D" uid="uid://dpo71ri5s5uk4" path="res://Inimigos/Kuy/Death.png" id="5_j4hhn"]
 [ext_resource type="Texture2D" uid="uid://ddxwndqoypm02" path="res://Inimigos/Kuy/Hurt.png" id="6_0wf77"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_inyh8"]
-radius = 72.0409
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e8aho"]
 size = Vector2(29.1581, 1.12119)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_inyh8"]
+radius = 72.0409
 
 [sub_resource type="Animation" id="Animation_cxc3m"]
 length = 0.001
@@ -79,7 +79,7 @@ tracks/4/keys = {
 tracks/5/type = "value"
 tracks/5/imported = false
 tracks/5/enabled = true
-tracks/5/path = NodePath("DetectionArea/Collision:disabled")
+tracks/5/path = NodePath("Collision:disabled")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
@@ -278,7 +278,7 @@ tracks/3/keys = {
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("DetectionArea/Collision:disabled")
+tracks/4/path = NodePath("Collision:disabled")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
@@ -461,6 +461,33 @@ _data = {
 "walk": SubResource("Animation_gbnd8")
 }
 
+[sub_resource type="Animation" id="Animation_o2xm7"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Texture:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("1_5esdo")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Texture:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
 [sub_resource type="Animation" id="Animation_gatiu"]
 resource_name = "hit"
 length = 0.5
@@ -489,33 +516,6 @@ tracks/1/keys = {
 "values": [Color(0.960784, 0.12549, 0, 1), Color(1, 1, 1, 1)]
 }
 
-[sub_resource type="Animation" id="Animation_o2xm7"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Texture:texture")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [ExtResource("1_5esdo")]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Texture:modulate")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 1)]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_b5dvw"]
 _data = {
 "RESET": SubResource("Animation_o2xm7"),
@@ -529,6 +529,11 @@ collision_layer = 6
 collision_mask = 5
 script = ExtResource("1_nr1wk")
 
+[node name="Collision" type="CollisionShape2D" parent="."]
+position = Vector2(-11, 14)
+scale = Vector2(1.13176, 15.3855)
+shape = SubResource("RectangleShape2D_e8aho")
+
 [node name="DetectionArea" type="Area2D" parent="."]
 light_mask = 0
 position = Vector2(-13.3333, -9.33333)
@@ -536,11 +541,6 @@ position = Vector2(-13.3333, -9.33333)
 [node name="CollisionDetection" type="CollisionShape2D" parent="DetectionArea"]
 position = Vector2(13.6667, 10)
 shape = SubResource("CircleShape2D_inyh8")
-
-[node name="Collision" type="CollisionShape2D" parent="DetectionArea"]
-position = Vector2(2.33331, 23.3333)
-scale = Vector2(1.13176, 15.3855)
-shape = SubResource("RectangleShape2D_e8aho")
 
 [node name="Texture" type="Sprite2D" parent="."]
 position = Vector2(4, -9.33333)
