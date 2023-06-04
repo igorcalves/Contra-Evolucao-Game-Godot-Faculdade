@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://ckkca35xmom2u" path="res://ContraEvolucao/Sprites/hero/player.png" id="2_sgnvu"]
 
 [sub_resource type="RectangleShape2D" id="12"]
-size = Vector2(9.5, 7)
+size = Vector2(9.5, 10.6667)
 
 [sub_resource type="Animation" id="1"]
 resource_name = "AttackDown"
@@ -331,7 +331,7 @@ hframes = 6
 vframes = 10
 
 [node name="Collision" type="CollisionShape2D" parent="."]
-position = Vector2(0.75, 16)
+position = Vector2(1, 13.6667)
 shape = SubResource("12")
 
 [node name="Animation" type="AnimationPlayer" parent="."]

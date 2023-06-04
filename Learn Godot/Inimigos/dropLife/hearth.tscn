@@ -1,0 +1,48 @@
+[gd_scene load_steps=7 format=3 uid="uid://barl423ud4tko"]
+
+[ext_resource type="Texture2D" uid="uid://dft170mwx2bg8" path="res://assets/hearth/hearth.png.png" id="1_pgjnu"]
+[ext_resource type="Script" path="res://Inimigos/dropLife/hearth.gd" id="1_v4fnt"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_30rem"]
+atlas = ExtResource("1_pgjnu")
+region = Rect2(0, 0, 415, 415)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v668o"]
+atlas = ExtResource("1_pgjnu")
+region = Rect2(0, 415, 415, 415)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_rqnt0"]
+animations = [{
+"frames": [{
+"duration": 1.6,
+"texture": SubResource("AtlasTexture_30rem")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v668o")
+}],
+"loop": true,
+"name": &"Hearth",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_pl8yf"]
+radius = 110.454
+
+[node name="Hearth" type="Node2D"]
+scale = Vector2(0.18, 0.18)
+script = ExtResource("1_v4fnt")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_rqnt0")
+animation = &"Hearth"
+autoplay = "Hearth"
+frame = 1
+frame_progress = 1.0
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+scale = Vector2(1, 1)
+shape = SubResource("CircleShape2D_pl8yf")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

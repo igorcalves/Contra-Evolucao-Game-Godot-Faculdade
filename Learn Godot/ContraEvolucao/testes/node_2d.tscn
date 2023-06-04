@@ -1,12 +1,14 @@
-[gd_scene load_steps=9 format=3 uid="uid://mi6g7afy4q71"]
+[gd_scene load_steps=11 format=3 uid="uid://mi6g7afy4q71"]
 
 [ext_resource type="PackedScene" uid="uid://by3l0honbb0kd" path="res://ContraEvolucao/Sprites/hero/Player.tscn" id="1_jkkas"]
 [ext_resource type="PackedScene" path="res://ContraEvolucao/Sprites/npc/character_body_2d.tscn" id="2_6e0oa"]
 [ext_resource type="PackedScene" uid="uid://0qb7vbblhhq2" path="res://assets/Coin/hud.tscn" id="3_g812x"]
 [ext_resource type="PackedScene" uid="uid://dcthfxtnu8eog" path="res://ContraEvolucao/Sprites/goblin/goblin.tscn" id="4_tddo8"]
 [ext_resource type="PackedScene" uid="uid://c4jv0dcguxqfg" path="res://Inimigos/Kuy/kuy.tscn" id="5_jbjor"]
+[ext_resource type="PackedScene" uid="uid://ca2yvvr3ap8co" path="res://assets/Coin/coin.tscn" id="5_trisr"]
 [ext_resource type="PackedScene" uid="uid://6qmgt12i33a4" path="res://Inimigos/FundiçãoHumana/fundicão_humana.tscn" id="6_71bxn"]
 [ext_resource type="PackedScene" uid="uid://j7gea75kscfi" path="res://Inimigos/PolvoBoss/polvo.tscn" id="7_ii2kk"]
+[ext_resource type="PackedScene" uid="uid://barl423ud4tko" path="res://Inimigos/dropLife/hearth.tscn" id="8_1jxop"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_22muh"]
 size = Vector2(394, 342)
@@ -25,7 +27,7 @@ shape = SubResource("RectangleShape2D_22muh")
 [node name="Sprite2D" type="Sprite2D" parent="."]
 
 [node name="Player" parent="." instance=ExtResource("1_jkkas")]
-position = Vector2(240, 41)
+position = Vector2(161, 61)
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("2_6e0oa")]
 position = Vector2(6, 380)
@@ -33,13 +35,37 @@ position = Vector2(6, 380)
 [node name="HUD" parent="." instance=ExtResource("3_g812x")]
 
 [node name="Goblin" parent="." instance=ExtResource("4_tddo8")]
-position = Vector2(1471, 346)
+position = Vector2(424, 74)
+
+[node name="Goblin3" parent="." instance=ExtResource("4_tddo8")]
+position = Vector2(353, -377)
+
+[node name="Goblin4" parent="." instance=ExtResource("4_tddo8")]
+position = Vector2(850, -413)
+
+[node name="Goblin2" parent="." instance=ExtResource("4_tddo8")]
+position = Vector2(905, 50)
 
 [node name="Kuy" parent="." instance=ExtResource("5_jbjor")]
 position = Vector2(-1243, 426)
 
 [node name="Polvo" parent="." instance=ExtResource("7_ii2kk")]
-position = Vector2(1232, -19)
+position = Vector2(2329, 490)
 
 [node name="FundicãoHumana" parent="." instance=ExtResource("6_71bxn")]
 position = Vector2(-881, 463)
+
+[node name="Hearth" parent="." instance=ExtResource("8_1jxop")]
+position = Vector2(91, 346)
+
+[node name="coin" parent="." instance=ExtResource("5_trisr")]
+position = Vector2(24, 381)
+
+[node name="coin2" parent="." instance=ExtResource("5_trisr")]
+position = Vector2(80, 381)
+
+[node name="coin3" parent="." instance=ExtResource("5_trisr")]
+position = Vector2(136, 381)
+
+[node name="coin4" parent="." instance=ExtResource("5_trisr")]
+position = Vector2(80, 433)

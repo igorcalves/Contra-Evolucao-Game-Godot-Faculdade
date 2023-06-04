@@ -120,3 +120,4 @@ func _on_dection_area_for_shot_body_exited(body):
 func _on_animation_animation_finished(anim_name):
 	if anim_name == "Death":
 		queue_free()
+		Global.drop_life(global_position)
