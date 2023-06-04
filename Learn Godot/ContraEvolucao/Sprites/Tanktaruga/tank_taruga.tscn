@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://dvd6xm80ht3it"]
+[gd_scene load_steps=19 format=3 uid="uid://fat3a0o6makk"]
 
 [ext_resource type="Texture2D" uid="uid://d3fga54otfn0r" path="res://assets/Enemy 5/Battle_turtle_attack4.png" id="1_rbyw5"]
 [ext_resource type="Script" path="res://ContraEvolucao/Sprites/Tanktaruga/tank_taruga.gd" id="1_skj5c"]

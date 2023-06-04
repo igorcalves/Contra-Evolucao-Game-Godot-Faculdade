@@ -76,5 +76,4 @@ func on_detection_area_body_exited(_body):
 func on_animation_animation_finished(anim_name):
 	if anim_name == "death":
 		queue_free()
-		Global.drop_life(global_position)
-		Global.drop_coin(global_position)
+		Global.drops(global_position)

@@ -23,7 +23,7 @@
 [ext_resource type="PackedScene" uid="uid://6qmgt12i33a4" path="res://Inimigos/FundiçãoHumana/fundicão_humana.tscn" id="21_3on87"]
 [ext_resource type="PackedScene" uid="uid://ca2yvvr3ap8co" path="res://assets/Coin/coin.tscn" id="21_p1snt"]
 [ext_resource type="Script" path="res://Inimigos/PolvoBoss/polvo.gd" id="22_hle5v"]
-[ext_resource type="PackedScene" path="res://ContraEvolucao/Sprites/Tanktaruga/tank_taruga.tscn" id="23_b0mic"]
+[ext_resource type="PackedScene" uid="uid://fat3a0o6makk" path="res://ContraEvolucao/Sprites/Tanktaruga/tank_taruga.tscn" id="23_b0mic"]
 [ext_resource type="Texture2D" uid="uid://d4mm53ygacayw" path="res://Inimigos/PolvoBoss/Idle.png" id="23_g370x"]
 [ext_resource type="Texture2D" uid="uid://crx1ukr3eb5yo" path="res://Inimigos/PolvoBoss/Attack.png" id="24_0wa7a"]
 [ext_resource type="Texture2D" uid="uid://by732ussowm33" path="res://Inimigos/PolvoBoss/Death.png" id="25_onkb3"]

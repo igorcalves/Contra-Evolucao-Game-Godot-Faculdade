@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-const ATTACK_AREA: PackedScene = preload("res://ContraEvolucao/Sprites/goblin/enemy_attack_area.tscn")
+const ATTACK_AREA: PackedScene = preload("res://Inimigos/PolvoBoss/enemy_attack_area_polvo.tscn")
 const attack_weaves: PackedScene = preload("res://Inimigos/PolvoBoss/attack.tscn")
 const attack_weaves_left: PackedScene = preload("res://Inimigos/PolvoBoss/attack(left).tscn")
 const OFFSET: Vector2 = Vector2(0,31)
@@ -17,7 +17,7 @@ var special_attack: bool = false
 var change_side = false
 
 
-@export var health = 4
+@export var health = 40
 @export var move_speed: float = 180.0
 @export var distance_threshold: float = 1800
 

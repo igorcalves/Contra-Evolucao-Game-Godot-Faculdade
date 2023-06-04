@@ -31,13 +31,19 @@ func increase_health(npc_health: int) ->void:
 	
 func increase_damage(npc_damage: int) -> void:
 	damage += npc_damage
-	add_damage += npc_damage	
+	add_damage += npc_damage
+	
+func drops(position:Vector2i) -> void:
+	drop_life(position)
+	drop_coin(position)	
 
 func drop_life(position:Vector2i) -> void:
+	var positions:Vector2i = Vector2i(position.x+13,position.y+10)
 	var ran = rng.randi_range(1,2)
+	ran =1
 	if ran == 1:
 		var drop_lifes = life.instantiate()
-		drop_lifes.position = position
+		drop_lifes.position = positions
 		add_child(drop_lifes)
 		return
 	else:
@@ -45,20 +51,19 @@ func drop_life(position:Vector2i) -> void:
 		
 
 func drop_coin(position:Vector2i) ->void:
-	var i = rng.randi_range(1,3)
-	i = 5
+	var i = rng.randi_range(1,4)
 	for j in i:
 		match j:
 			1:
-				spawn_coins(position)
+				spawn_coins(position,-56)
 			2:
-				spawn_coins(position,56,-35)
+				spawn_coins(position,0,56)
 			3:
-				spawn_coins(position,112,-35)
+				spawn_coins(position,56,0)
 			4:
-				spawn_coins(position,56,-90)
+				spawn_coins(position,0,-56)
 		
-func spawn_coins(positions:Vector2i,posx:int = 0,posy:int = -35) -> void:
+func spawn_coins(positions:Vector2i,posx:int = 0,posy:int = 0) -> void:
 	var position: Vector2i = Vector2i(positions.x + posx, positions.y + posy)
 	var create_coin = coin.instantiate()
 	create_coin.position = Vector2i(position.x,position.y)
