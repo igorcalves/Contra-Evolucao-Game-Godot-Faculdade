@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://d03jb6cj7ak4d"]
+
+[ext_resource type="Script" path="res://ContraEvolucao/Sprites/npc/npc_2.gd" id="1_ea5xv"]
+[ext_resource type="Texture2D" uid="uid://2rave17htp20" path="res://ContraEvolucao/Sprites/npc/Npc.png" id="2_r1oy0"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_edmjq"]
+radius = 4.05518
+
+[node name="npc_2" type="CharacterBody2D"]
+scale = Vector2(3, 3)
+collision_layer = 7
+script = ExtResource("1_ea5xv")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_r1oy0")
+hframes = 6
+vframes = 10
+frame = 5
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.333333, 10.6667)
+shape = SubResource("CircleShape2D_edmjq")

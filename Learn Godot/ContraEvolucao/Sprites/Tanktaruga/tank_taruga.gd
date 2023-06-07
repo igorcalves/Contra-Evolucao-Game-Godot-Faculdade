@@ -107,7 +107,7 @@ func stop_move():
 
 func _on_dection_area_for_shot_body_entered(body):
 	check_flip_H()
-	if body.has_method("NPC"):
+	if Global.check_is_NPC(body):
 		return
 	player_ref = body
 

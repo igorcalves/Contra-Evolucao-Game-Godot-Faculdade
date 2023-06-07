@@ -1,0 +1,14 @@
+[remap]
+
+importer="dialogue_manager_compiler_8"
+type="Resource"
+uid="uid://ccylgpdhevk48"
+path="res://.godot/imported/terceiro_dialogo.dialogue-bdc2286b00df5c1c2f75c1b656ffa42e.tres"
+
+[deps]
+
+source_file="res://ContraEvolucao/dialog/terceiro_dialogo.dialogue"
+dest_files=["res://.godot/imported/terceiro_dialogo.dialogue-bdc2286b00df5c1c2f75c1b656ffa42e.tres"]
+
+[params]
+

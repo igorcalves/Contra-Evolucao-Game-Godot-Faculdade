@@ -1,7 +1,9 @@
 [gd_scene load_steps=23 format=3 uid="uid://by3l0honbb0kd"]
 
-[ext_resource type="Script" path="res://ContraEvolucao/Sprites/hero/Player.gd" id="1_mvqct"]
-[ext_resource type="Texture2D" uid="uid://ckkca35xmom2u" path="res://ContraEvolucao/Sprites/hero/player.png" id="2_sgnvu"]
+[ext_resource type="Script" path="res://ContraEvolucao/Sprites/hero/Player.gd" id="1_eop3o"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_5jho6"]
+load_path = "res://.godot/imported/player.png-b2b71c892cceb5385813fe4c4687e032.ctex"
 
 [sub_resource type="RectangleShape2D" id="12"]
 size = Vector2(9.5, 10.6667)
@@ -293,10 +295,10 @@ _data = {
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8qt2h"]
-size = Vector2(19, 25.1666)
+size = Vector2(34.6667, 25.1666)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fpxrl"]
-size = Vector2(21, 30.3333)
+size = Vector2(35, 30.3333)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_igweu"]
 size = Vector2(25.1458, 19)
@@ -346,11 +348,11 @@ z_index = 1
 scale = Vector2(3, 3)
 collision_layer = 5
 collision_mask = 6
-script = ExtResource("1_mvqct")
+script = ExtResource("1_eop3o")
 
 [node name="Texture" type="Sprite2D" parent="."]
 texture_filter = 1
-texture = ExtResource("2_sgnvu")
+texture = SubResource("CompressedTexture2D_5jho6")
 hframes = 6
 vframes = 10
 
@@ -369,7 +371,7 @@ collision_layer = 0
 collision_mask = 2
 
 [node name="ColissitonAreaAttackDown" type="CollisionShape2D" parent="AttackDownArea"]
-position = Vector2(2.5, 29.4167)
+position = Vector2(3, 29.4167)
 shape = SubResource("RectangleShape2D_8qt2h")
 disabled = true
 
@@ -378,7 +380,7 @@ collision_layer = 0
 collision_mask = 2
 
 [node name="ColissitonAreaAttackUp" type="CollisionShape2D" parent="AttackUpArea"]
-position = Vector2(0.5, -5.16668)
+position = Vector2(2.83333, -5.16668)
 shape = SubResource("RectangleShape2D_fpxrl")
 disabled = true
 
@@ -400,8 +402,6 @@ libraries = {
 position_smoothing_enabled = true
 
 [node name="detectionArea" type="Area2D" parent="."]
-light_mask = 16
-visibility_layer = 16
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="detectionArea"]
 shape = SubResource("CircleShape2D_ijo5d")

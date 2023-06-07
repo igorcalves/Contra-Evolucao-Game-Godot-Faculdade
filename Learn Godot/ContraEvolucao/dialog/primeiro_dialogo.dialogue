@@ -3,6 +3,8 @@
 ???: Hmm, um humano, fazia tempo que eu não via um, quem é você?
 - Onde estou?
 	George: Em uma ilha nada amigável, eu sou o George.
+- Encerrar
+	=> END
 
 ~ continue
 - Sou o Sebastian

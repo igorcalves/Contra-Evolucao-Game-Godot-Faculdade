@@ -1,4 +1,4 @@
-[gd_scene load_steps=103 format=3 uid="uid://crvf1drqjqry3"]
+[gd_scene load_steps=106 format=3 uid="uid://crvf1drqjqry3"]
 
 [ext_resource type="Script" path="res://ContraEvolucao/management/Terrain.gd" id="1_oj5xr"]
 [ext_resource type="Texture2D" uid="uid://cj04hyx4pu447" path="res://assets/Terrain/Ground/Grass_Flat.png" id="1_pvoef"]
@@ -29,6 +29,9 @@
 [ext_resource type="Texture2D" uid="uid://by732ussowm33" path="res://Inimigos/PolvoBoss/Death.png" id="25_onkb3"]
 [ext_resource type="Texture2D" uid="uid://cxky6sal3kh5v" path="res://Inimigos/PolvoBoss/Hurt.png" id="26_6v1dc"]
 [ext_resource type="Texture2D" uid="uid://bc4wc4uqnidew" path="res://Inimigos/PolvoBoss/Walk.png" id="27_f4p0h"]
+[ext_resource type="PackedScene" uid="uid://q34aosnprcfb" path="res://ContraEvolucao/Sprites/npc/npc(1).tscn" id="30_d8ysq"]
+[ext_resource type="PackedScene" uid="uid://d03jb6cj7ak4d" path="res://ContraEvolucao/Sprites/npc/npc_2.tscn" id="31_qxxce"]
+[ext_resource type="PackedScene" uid="uid://dhuomxrrsuooy" path="res://ContraEvolucao/Sprites/npc/npc_3.tscn" id="32_carig"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7nl3u"]
 texture = ExtResource("2_xhq05")
@@ -7075,6 +7078,17 @@ position = Vector2(1363, 1196)
 
 [node name="coin12" parent="coins" instance=ExtResource("21_p1snt")]
 position = Vector2(672, 1305)
+
+[node name="NPC\'s" type="Node2D" parent="."]
+
+[node name="npc(1)" parent="NPC\'s" instance=ExtResource("30_d8ysq")]
+position = Vector2(-14, 286)
+
+[node name="npc_2" parent="NPC\'s" instance=ExtResource("31_qxxce")]
+position = Vector2(3345, 3129)
+
+[node name="npc_3" parent="NPC\'s" instance=ExtResource("32_carig")]
+position = Vector2(2710, 442)
 
 [connection signal="timeout" from="Sprites/Boss/Polvo/Timer" to="Sprites/Boss/Polvo" method="_on_timer_timeout" flags=18]
 [connection signal="body_entered" from="Sprites/Boss/Polvo/DetectionArea" to="Sprites/Boss/Polvo" method="on_detection_area_body_entered" flags=18]

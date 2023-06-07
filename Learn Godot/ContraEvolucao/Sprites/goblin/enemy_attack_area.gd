@@ -8,7 +8,7 @@ func _process(delta):
 
 
 func on_body_entered(body):
-	if body.has_method("NPC"):
+	if Global.check_is_NPC(body):
 		return
 	body.update_health(damage)
 

@@ -1,0 +1,14 @@
+[remap]
+
+importer="dialogue_manager_compiler_8"
+type="Resource"
+uid="uid://cpv6n2l735mc2"
+path="res://.godot/imported/segundo_dialogo.dialogue-88a9f9d759d7aea7d66342a62a143b1d.tres"
+
+[deps]
+
+source_file="res://ContraEvolucao/dialog/segundo_dialogo.dialogue"
+dest_files=["res://.godot/imported/segundo_dialogo.dialogue-88a9f9d759d7aea7d66342a62a143b1d.tres"]
+
+[params]
+

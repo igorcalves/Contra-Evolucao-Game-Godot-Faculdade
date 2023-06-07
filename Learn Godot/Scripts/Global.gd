@@ -15,7 +15,7 @@ var add_healh = 0
 var add_damage = 0
 var scene_can_add = true
 var NOT_can_move = false
-
+var select_npc: int = 0
 
 
 func _ready():
@@ -52,7 +52,7 @@ func drop_life(position:Vector2i) -> void:
 
 func drop_coin(position:Vector2i) ->void:
 	var i = rng.randi_range(1,4)
-	for j in i:
+	for j in i +1:
 		match j:
 			1:
 				spawn_coins(position,-56)
@@ -68,3 +68,14 @@ func spawn_coins(positions:Vector2i,posx:int = 0,posy:int = 0) -> void:
 	var create_coin = coin.instantiate()
 	create_coin.position = Vector2i(position.x,position.y)
 	add_child(create_coin)
+	
+func check_is_NPC(body: CharacterBody2D) -> bool:
+	if body.has_method("NPC") or body.has_method("NPC_2") or body.has_method("NPC_3"):
+		if body.has_method("NPC"):
+			select_npc = 1
+		if body.has_method("NPC_2"):
+			select_npc = 2
+		if body.has_method("NPC_3"):
+			select_npc = 3
+		return true
+	return false

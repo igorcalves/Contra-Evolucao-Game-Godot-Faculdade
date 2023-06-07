@@ -19,6 +19,8 @@ var can_die: bool = false
 var sides : String = ""
 var npc_in_range = false
 var path_dialogue: String = "res://ContraEvolucao/dialog/primeiro_dialogo.dialogue"
+var path_dialogue_2: String = "res://ContraEvolucao/dialog/segundo_dialogo.dialogue"
+var path_dialogue_3: String = "res://ContraEvolucao/dialog/terceiro_dialogo.dialogue"
 
 func PLAYER():
 	pass
@@ -26,8 +28,12 @@ func PLAYER():
 func _physics_process(_delta: float) -> void:
 	if npc_in_range:
 		if Input.is_action_just_pressed("acction_button"):
-			DialogueManager.show_example_dialogue_balloon(load(path_dialogue),"start")
-	
+			if Global.select_npc == 1:
+				DialogueManager.show_example_dialogue_balloon(load(path_dialogue),"start")
+			if Global.select_npc == 2:
+				DialogueManager.show_example_dialogue_balloon(load(path_dialogue_2),"start")
+			if Global.select_npc == 3:
+				DialogueManager.show_example_dialogue_balloon(load(path_dialogue_3),"start")
 	if can_attack == false or can_die or Global.NOT_can_move:
 		return
 	match_slide()	
@@ -123,13 +129,19 @@ func on_animation_finished(anim_name:String):
 
 # ----------------------attack Functions--------------------------#
 func on_attack_area_body_entered_Down(body):
+	if Global.check_is_NPC(body):
+		return
 	body.update_health(Global.damage)
 
 func on_attack_area_body_entered_Up(body):
+	if Global.check_is_NPC(body):
+		return
 	body.update_health(Global.damage)
 
 
 func on_attack_area_body_entered_Turned(body):
+	if Global.check_is_NPC(body):
+		return
 	body.update_health(Global.damage)
 
 func update_health(value: int) -> void:
@@ -149,12 +161,12 @@ func update_health(value: int) -> void:
 
 
 func on_detection_area_body_entered(body):
-	if body.has_method("NPC"):
+	if Global.check_is_NPC(body):
 		npc_in_range = true
 
 
 func on_detection_area_body_exited(body):
-	if body.has_method("NPC"):
+	if Global.check_is_NPC(body):
 		npc_in_range = false
 
 func _input(event: InputEvent) -> void:
