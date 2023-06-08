@@ -15,7 +15,7 @@ var can_die: bool = false
 var kills = 1
 var change_side = false
 
-@export var health = 5
+@export var health = 16
 @export var move_speed: float = 192.0
 @export var distance_threshold: float = 90
 
@@ -34,7 +34,7 @@ func _physics_process(_delta: float) -> void:
 	if distance < distance_threshold:
 		animation.play("Attack_2")
 		return
-	if distance < 150:
+	if distance < 500:
 		check_flip_H()
 		animation.play("Attack_4")
 		return

@@ -19,7 +19,7 @@ var special_attack: bool = false
 var change_side = false
 
 
-@export var health = 4
+@export var health = 45
 @export var move_speed: float = 180.0
 @export var distance_threshold: float = 1800
 

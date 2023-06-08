@@ -4,25 +4,27 @@ George: Olá novamente caro amigo, nessa sua caminhada imagino que tenha derrota
 George: Com essas moedas, eu posso te oferecer melhorias, o que acha? Tem moedas ai?
 - Tenho algumas.
 	George: Ótimo! Então, o que deseja sebastian atenção cada melhoria irá te custar 10 moedas?
-	if Global.coins >10:
-		- Aumentar Ataque
-			set Global.increase_damage(1)
+	if Global.coins >=10:
+		- Aumentar Ataque + 2
+			set Global.increase_damage(2)
 			set Global.pay_coins()
-	 	- Aumentar Vida
-			set Global.increase_health(1)
+			set Global.change_dialog_status()
+
+	 	- Aumentar Vida +5
+			set Global.increase_health(5)
 			set Global.pay_coins()
-	 	- Aumentar Velocidade
-			set Global.increase_speed(25)
+			set Global.change_dialog_status()
+	 	- Aumentar Velocidade + 50 
+			set Global.increase_speed(50)
 			set Global.pay_coins()
-		- Recuperar vida
-			if Global.heatlh < 10:
-				set Global.health = 10
+			set Global.change_dialog_status()
 	else:
 		George: parece que você tem {{Global.coins}} moedas amigo volte quando tiver mais
 - Não tenho nenhuma.
 	George: Que pena, volte quando tiver.
+	set Global.change_dialog_status()
 	=> END
 	
 
-
+set Global.change_dialog_status()
 => END

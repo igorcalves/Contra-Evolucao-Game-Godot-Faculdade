@@ -19,6 +19,5 @@ George: Eu mesmo vi ele apenas uma vez desde que vivo aqui. É uma espécie de p
 George: E antes que me pergunte, eu não vim sozinho, porém esse monstro maldito, ele sequestra os humanos, o que faz com eles? Eu não sei.
 - Sabe onde ele está?
 George: O chefe se esconde no meio da ilha, boa sorte na sua caminhada e tome cuidado pois seus lacaios estao a solta.
-
-
+set Global.change_dialog_status()
 => END

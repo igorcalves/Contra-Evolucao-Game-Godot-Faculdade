@@ -15,7 +15,7 @@ var kills = 1
 var alter_attack = true
 
 
-@export var health = 10
+@export var health = 15
 @export var move_speed: float = 192.0
 @export var distance_threshold: float = 60.0
 

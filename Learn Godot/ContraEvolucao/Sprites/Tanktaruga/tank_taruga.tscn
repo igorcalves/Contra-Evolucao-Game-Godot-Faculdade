@@ -11,7 +11,7 @@
 radius = 17.0018
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jbmgc"]
-size = Vector2(186.714, 35)
+size = Vector2(578.572, 35)
 
 [sub_resource type="Animation" id="Animation_552i0"]
 resource_name = "Attack_2"
@@ -276,13 +276,14 @@ shape = SubResource("CircleShape2D_uaq7a")
 [node name="dection_area_for_shot" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="dection_area_for_shot"]
-position = Vector2(8, 17.4286)
+position = Vector2(11, 17.4286)
+scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_jbmgc")
 
 [node name="Texture" type="Sprite2D" parent="."]
 texture_filter = 1
 position = Vector2(1.14286, -0.857142)
-texture = ExtResource("2_3c5qw")
+texture = ExtResource("4_rrdu6")
 hframes = 4
 
 [node name="Animation" type="AnimationPlayer" parent="."]

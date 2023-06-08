@@ -1,5 +1,5 @@
 extends Label
 
 func _process(delta: float) -> void:
-	text = str(" ",Global.health)
+	text = str(Global.health)
 

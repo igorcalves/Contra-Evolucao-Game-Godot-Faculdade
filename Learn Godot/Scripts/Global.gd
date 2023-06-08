@@ -7,9 +7,9 @@ var rng = RandomNumberGenerator.new()
 
 var coins = 0
 var kills = 0
-var health = 100
-var move_speed = 256
-var damage = 10
+var health = 10
+var move_speed = 380
+var damage = 3
 var add_speed = 0
 var add_healh = 0
 var add_damage = 0
@@ -17,9 +17,13 @@ var scene_can_add = true
 var NOT_can_move = false
 var select_npc: int = 0
 var final_boss
-
+var can_dialogue = true
+var can_attack = true
 func _ready():
 	pass
+
+func change_dialog_status():
+	can_dialogue = true
 func pay_coins():
 	coins -=10
 
@@ -81,3 +85,17 @@ func check_is_NPC(body: CharacterBody2D) -> bool:
 			select_npc = 3
 		return true
 	return false
+
+
+func reset_status():
+	Global.coins = 0
+	Global.kills = 0
+	Global.health = 10
+	Global.move_speed = 380
+	Global.damage = 1
+	Global.add_speed = 0
+	Global.add_healh = 0
+	Global.add_damage = 0
+	Global.scene_can_add = true
+	Global.NOT_can_move = false
+	

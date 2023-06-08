@@ -6927,7 +6927,7 @@ z_index = -1
 
 [node name="Player" parent="Sprites" instance=ExtResource("5_qo5gy")]
 z_index = 0
-position = Vector2(1399, 1041)
+position = Vector2(-274, 259)
 
 [node name="Kuy" type="Node2D" parent="Sprites"]
 
@@ -6938,7 +6938,25 @@ position = Vector2(651, 1175)
 position = Vector2(743, 1722)
 
 [node name="Kuy3" parent="Sprites/Kuy" instance=ExtResource("20_xjowx")]
-position = Vector2(-403, 1975)
+position = Vector2(-127, 2288)
+
+[node name="Kuy4" parent="Sprites/Kuy" instance=ExtResource("20_xjowx")]
+position = Vector2(571, 2231)
+
+[node name="Kuy5" parent="Sprites/Kuy" instance=ExtResource("20_xjowx")]
+position = Vector2(3983, 287)
+
+[node name="Kuy6" parent="Sprites/Kuy" instance=ExtResource("20_xjowx")]
+position = Vector2(3070, 234)
+
+[node name="Kuy7" parent="Sprites/Kuy" instance=ExtResource("20_xjowx")]
+position = Vector2(2136, 111)
+
+[node name="Kuy8" parent="Sprites/Kuy" instance=ExtResource("20_xjowx")]
+position = Vector2(1276, -391)
+
+[node name="Kuy9" parent="Sprites/Kuy" instance=ExtResource("20_xjowx")]
+position = Vector2(64, 1366)
 
 [node name="fundiçao_humana" type="Node2D" parent="Sprites"]
 
@@ -6963,8 +6981,26 @@ position = Vector2(-452, 1196)
 [node name="FundicãoHumana4" parent="Sprites/fundiçao_humana" instance=ExtResource("21_3on87")]
 position = Vector2(611, 3053)
 
+[node name="FundicãoHumana11" parent="Sprites/fundiçao_humana" instance=ExtResource("21_3on87")]
+position = Vector2(1321, 3037)
+
+[node name="FundicãoHumana12" parent="Sprites/fundiçao_humana" instance=ExtResource("21_3on87")]
+position = Vector2(1689, 2962)
+
 [node name="FundicãoHumana5" parent="Sprites/fundiçao_humana" instance=ExtResource("21_3on87")]
 position = Vector2(1211, 2549)
+
+[node name="FundicãoHumana9" parent="Sprites/fundiçao_humana" instance=ExtResource("21_3on87")]
+position = Vector2(1641, 2190)
+
+[node name="FundicãoHumana10" parent="Sprites/fundiçao_humana" instance=ExtResource("21_3on87")]
+position = Vector2(2249, 2707)
+
+[node name="FundicãoHumana14" parent="Sprites/fundiçao_humana" instance=ExtResource("21_3on87")]
+position = Vector2(3817, 1809)
+
+[node name="FundicãoHumana13" parent="Sprites/fundiçao_humana" instance=ExtResource("21_3on87")]
+position = Vector2(3554, 2084)
 
 [node name="Boss" type="Node2D" parent="Sprites"]
 
@@ -7012,6 +7048,9 @@ libraries = {
 [node name="tank_taruga" parent="Sprites/Tank_taruga" instance=ExtResource("23_b0mic")]
 position = Vector2(2180, 3004)
 
+[node name="tank_taruga6" parent="Sprites/Tank_taruga" instance=ExtResource("23_b0mic")]
+position = Vector2(3020, 1844)
+
 [node name="tank_taruga2" parent="Sprites/Tank_taruga" instance=ExtResource("23_b0mic")]
 position = Vector2(2940, 2400)
 
@@ -7029,7 +7068,25 @@ position = Vector2(3472, -56)
 [node name="coins" type="Node" parent="."]
 
 [node name="coin" parent="coins" instance=ExtResource("21_p1snt")]
-position = Vector2(1311, 177)
+position = Vector2(981, 789)
+
+[node name="coin18" parent="coins" instance=ExtResource("21_p1snt")]
+position = Vector2(1048, 967)
+
+[node name="coin19" parent="coins" instance=ExtResource("21_p1snt")]
+position = Vector2(1142, 1058)
+
+[node name="coin20" parent="coins" instance=ExtResource("21_p1snt")]
+position = Vector2(1072, 1031)
+
+[node name="coin21" parent="coins" instance=ExtResource("21_p1snt")]
+position = Vector2(1048, 816)
+
+[node name="coin22" parent="coins" instance=ExtResource("21_p1snt")]
+position = Vector2(984, 981)
+
+[node name="coin23" parent="coins" instance=ExtResource("21_p1snt")]
+position = Vector2(961, 873)
 
 [node name="coin2" parent="coins" instance=ExtResource("21_p1snt")]
 position = Vector2(2212, -350)
@@ -7071,7 +7128,31 @@ position = Vector2(1315, 2876)
 position = Vector2(1058, 491)
 
 [node name="coin10" parent="coins" instance=ExtResource("21_p1snt")]
-position = Vector2(755, -497)
+position = Vector2(627, -493)
+
+[node name="coin30" parent="coins" instance=ExtResource("21_p1snt")]
+position = Vector2(671, -487)
+
+[node name="coin31" parent="coins" instance=ExtResource("21_p1snt")]
+position = Vector2(723, -495)
+
+[node name="coin24" parent="coins" instance=ExtResource("21_p1snt")]
+position = Vector2(721, -545)
+
+[node name="coin25" parent="coins" instance=ExtResource("21_p1snt")]
+position = Vector2(673, -543)
+
+[node name="coin26" parent="coins" instance=ExtResource("21_p1snt")]
+position = Vector2(615, -551)
+
+[node name="coin27" parent="coins" instance=ExtResource("21_p1snt")]
+position = Vector2(715, -595)
+
+[node name="coin28" parent="coins" instance=ExtResource("21_p1snt")]
+position = Vector2(671, -597)
+
+[node name="coin29" parent="coins" instance=ExtResource("21_p1snt")]
+position = Vector2(609, -601)
 
 [node name="coin11" parent="coins" instance=ExtResource("21_p1snt")]
 position = Vector2(1363, 1196)

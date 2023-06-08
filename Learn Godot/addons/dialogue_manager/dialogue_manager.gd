@@ -517,7 +517,12 @@ func resolve(tokens: Array, extra_game_states: Array):
 					tokens.remove_at(i-1)
 					i -= 2
 				else:
-					assert(false, "\"{method}\" is not a callable method on \"{object}\"".format({ method = function_name, object = str(caller) }))
+
+
+
+
+					assert
+					(false, "\"{method}\" is not a callable method on \"{object}\"".format({ method = function_name, object = str(caller) }))
 			else:
 				var found: bool = false
 				for state in get_game_states(extra_game_states):

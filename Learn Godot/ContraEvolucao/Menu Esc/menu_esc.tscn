@@ -1,0 +1,89 @@
+[gd_scene load_steps=3 format=3 uid="uid://2n70ld8oq3kr"]
+
+[ext_resource type="Script" path="res://ContraEvolucao/Menu Esc/menu_esc.gd" id="1_wewcq"]
+[ext_resource type="FontFile" uid="uid://c4fqoidpkapkt" path="res://ContraEvolucao/kurland.ttf" id="2_uh1xr"]
+
+[node name="Control" type="Control"]
+z_index = 1
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 520.0
+offset_top = 292.0
+offset_right = -1400.0
+offset_bottom = -788.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.5, 0.5)
+script = ExtResource("1_wewcq")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 793.0
+offset_top = 388.0
+offset_right = 997.0
+offset_bottom = 671.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0.447059, 0.45098, 0.788235)
+
+[node name="GridContainer" type="GridContainer" parent="ColorRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -62.5
+offset_top = -67.0
+offset_right = 62.5
+offset_bottom = 67.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Voltar ao Jogo" type="Button" parent="ColorRect/GridContainer" groups=["button"]]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_uh1xr")
+text = "Voltar Ao Jogo"
+flat = true
+
+[node name="Recomecar" type="Button" parent="ColorRect/GridContainer" groups=["button"]]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_uh1xr")
+text = "Recomeçar"
+flat = true
+
+[node name="ir ao menu" type="Button" parent="ColorRect/GridContainer" groups=["button"]]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_uh1xr")
+text = "Ir para o menu
+"
+flat = true
+
+[node name="Sair do jogo" type="Button" parent="ColorRect/GridContainer" groups=["button"]]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_uh1xr")
+text = "Sair do jogo para
+area de trabalho"
+flat = true
+
+[node name="Label" type="Label" parent="ColorRect"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -25.0
+offset_top = 40.0
+offset_right = 18.0
+offset_bottom = 66.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 0.603922, 0, 1)
+theme_override_fonts/font = ExtResource("2_uh1xr")
+text = "Menu 
+"

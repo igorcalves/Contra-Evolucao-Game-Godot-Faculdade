@@ -10,11 +10,11 @@ extends CharacterBody2D
 var NOT_can_move = Global.NOT_can_move
 
 const scene: PackedScene = preload("res://ContraEvolucao/Status/cenas_status.tscn")
+const esc_menu: PackedScene = preload("res://ContraEvolucao/Menu Esc/menu_esc.tscn")
 const final_dialogue: PackedScene = preload("res://ContraEvolucao/dialog/final_dialog.tscn")
-var status_scene_instance: PackedScene
 var one_windown = true
 
-var can_attack: bool = true
+
 var can_die: bool = false
 var sides : String = ""
 var npc_in_range = false
@@ -33,14 +33,19 @@ func _physics_process(_delta: float) -> void:
 		final.position = Vector2(0,0)
 		add_child(final)
 	if npc_in_range:
-		if Input.is_action_just_pressed("acction_button"):
-			if Global.select_npc == 1:
-				DialogueManager.show_example_dialogue_balloon(load(path_dialogue),"start")
-			if Global.select_npc == 2:
-				DialogueManager.show_example_dialogue_balloon(load(path_dialogue_2),"start")
-			if Global.select_npc == 3:
-				DialogueManager.show_example_dialogue_balloon(load(path_dialogue_3),"start")
-	if can_attack == false or can_die or Global.NOT_can_move:
+		if Global.can_dialogue:
+			if Input.is_action_just_pressed("acction_button"):
+				if Global.can_dialogue:
+					if Global.select_npc == 1:
+						Global.can_dialogue = false
+						DialogueManager.show_example_dialogue_balloon(load(path_dialogue),"start")
+					if Global.select_npc == 2:
+						DialogueManager.show_example_dialogue_balloon(load(path_dialogue_2),"start")
+						Global.can_dialogue = false
+					if Global.select_npc == 3:
+						Global.can_dialogue = false
+						DialogueManager.show_example_dialogue_balloon(load(path_dialogue_3),"start")
+	if Global.can_attack == false or can_die or Global.NOT_can_move:
 		return
 	match_slide()	
 	move()
@@ -91,8 +96,8 @@ func animate() -> void:
 			animation.play("idle")
 	
 func attack_handler() -> void:
-	if Input.is_action_just_pressed("attack") and can_attack:
-		can_attack = false
+	if Input.is_action_just_pressed("attack") and Global.can_attack:
+		Global.can_attack = false
 
 		if sides == "Up":
 			animation.play("AttackUp")
@@ -124,11 +129,11 @@ func get_animation_direction(direction: Vector2) ->String:
 func on_animation_finished(anim_name:String):
 	match anim_name:
 		"AttackTurned":
-			can_attack = true
+			Global.can_attack = true
 		"AttackDown":
-			can_attack = true
+			Global.can_attack = true
 		"AttackUp":
-			can_attack = true
+			Global.can_attack = true
 		"Death":
 			get_tree().reload_current_scene()
 
@@ -179,6 +184,12 @@ func _input(event: InputEvent) -> void:
 	if event is InputEventKey:
 		if Input.is_action_just_pressed("menu_status"):
 			var cena = scene.instantiate()
+			if Global.scene_can_add:
+				add_child(cena)
+				Global.scene_can_add = false
+				Global.NOT_can_move = true
+		if Input.is_action_just_pressed("esc"):
+			var cena = esc_menu.instantiate()
 			if Global.scene_can_add:
 				add_child(cena)
 				Global.scene_can_add = false
