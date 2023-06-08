@@ -2,13 +2,12 @@
 
 ???: Hmm, um humano, fazia tempo que eu não via um, quem é você?
 - Onde estou?
-	George: Em uma ilha nada amigável, eu sou o George.
-- Encerrar
-	=> END
+	???: Em uma ilha nada amigável, eu sou o George.
 
 ~ continue
 - Sou o Sebastian
-	- Quem é você?
+sebastian:
+- Quem é você?
 George: Prazer, me chamo George.
 - Como vim parar aqui?
 	George: Acredito que tu tenha perdido a memória, eu apenas vi seu corpo por aqui, tinham alguns peixes que lhe trouxeram.
@@ -19,35 +18,7 @@ George: Imagino que você queira sair dessa ilha, Sebastian. Mas para isso, ter�
 George: Eu mesmo vi ele apenas uma vez desde que vivo aqui. É uma espécie de polvo.
 George: E antes que me pergunte, eu não vim sozinho, porém esse monstro maldito, ele sequestra os humanos, o que faz com eles? Eu não sei.
 - Sabe onde ele está?
-George: O chefe se esconde no meio da ilha, boa sorte na sua caminhada e tome cuidado.
+George: O chefe se esconde no meio da ilha, boa sorte na sua caminhada e tome cuidado pois seus lacaios estao a solta.
 
-
-=> END
-
-~ segundo
-
-George: Olá novamente caro amigo, nessa sua caminhada imagino que tenha derrotado alguns inimigos e pego moedas.
-George: Com essas moedas, eu posso te oferecer melhorias, o que acha? Tem moedas ai?
-- Tenho algumas.
-	George: Ótimo! Então, o que deseja?
-	- Aumentar Ataque
-		set Global.increase_damage(1)
- 	- Aumentar Vida
-		set Global.increase_health(1)
- 	- Aumentar Velocidade
-		set Global.increase_speed(25)
-- Não tenho nenhuma.
-	George: Que pena, volte quando tiver.
-	=> END
-	
-- Recuperar vida
-	if Global.heatlh < 10:
-		set Global.health = 10
-
-~ terceiro
-
-George: Nos encontramos novamente camarada, veja, o chefe está logo ali a frente.
-George: É sua chance, depois que você derrotar ele, podemos viver em paz novamente.
-George: Tome cuidado!
 
 => END

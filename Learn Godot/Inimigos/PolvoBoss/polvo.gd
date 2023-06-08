@@ -3,6 +3,8 @@ extends CharacterBody2D
 const ATTACK_AREA: PackedScene = preload("res://Inimigos/PolvoBoss/enemy_attack_area_polvo.tscn")
 const attack_weaves: PackedScene = preload("res://Inimigos/PolvoBoss/attack.tscn")
 const attack_weaves_left: PackedScene = preload("res://Inimigos/PolvoBoss/attack(left).tscn")
+const final_dialogue: PackedScene = preload("res://ContraEvolucao/dialog/final_dialog.tscn")
+const NPC: PackedScene = preload("res://ContraEvolucao/Sprites/npc/npc_3.tscn")
 const OFFSET: Vector2 = Vector2(0,31)
 
 @onready var animation: AnimationPlayer = get_node("Animation")
@@ -17,7 +19,7 @@ var special_attack: bool = false
 var change_side = false
 
 
-@export var health = 40
+@export var health = 4
 @export var move_speed: float = 180.0
 @export var distance_threshold: float = 1800
 
@@ -104,6 +106,7 @@ func on_detection_area_body_exited(_body):
 func on_animation_animation_finished(anim_name):
 	if anim_name == "death":
 		queue_free()
+	Global.final_boss = true
 
 
 func _on_timer_timeout():

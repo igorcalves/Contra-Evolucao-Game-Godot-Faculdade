@@ -6927,7 +6927,7 @@ z_index = -1
 
 [node name="Player" parent="Sprites" instance=ExtResource("5_qo5gy")]
 z_index = 0
-position = Vector2(-144, 311)
+position = Vector2(1399, 1041)
 
 [node name="Kuy" type="Node2D" parent="Sprites"]
 
@@ -7080,6 +7080,7 @@ position = Vector2(1363, 1196)
 position = Vector2(672, 1305)
 
 [node name="NPC\'s" type="Node2D" parent="."]
+z_index = -1
 
 [node name="npc(1)" parent="NPC\'s" instance=ExtResource("30_d8ysq")]
 position = Vector2(-14, 286)

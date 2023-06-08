@@ -1,4 +1,4 @@
 extends Label
 
 func _process(delta: float) -> void:
-	text = str(Global.coins)
+	text = str(" ", Global.coins)

@@ -12,7 +12,7 @@
 [node name="Node2D" type="Node2D"]
 
 [node name="Kuy" parent="." instance=ExtResource("3_3l23b")]
-position = Vector2(-118, 173)
+position = Vector2(-788, 783)
 
 [node name="FundicãoHumana" parent="." instance=ExtResource("3_aughi")]
 position = Vector2(752, 414)
@@ -24,13 +24,19 @@ position = Vector2(1048, 448)
 position = Vector2(795, 115)
 
 [node name="FundicãoHumana4" parent="." instance=ExtResource("3_aughi")]
-position = Vector2(125, 212)
+position = Vector2(1020, 212)
 
 [node name="Polvo" parent="." instance=ExtResource("5_fgmmq")]
-position = Vector2(-488, 245)
+position = Vector2(-298, -3)
+
+[node name="Polvo3" parent="." instance=ExtResource("5_fgmmq")]
+position = Vector2(-973, -753)
+
+[node name="Polvo2" parent="." instance=ExtResource("5_fgmmq")]
+position = Vector2(835, -655)
 
 [node name="tank_taruga" parent="." instance=ExtResource("6_huc0y")]
-position = Vector2(-293, 3.00003)
+position = Vector2(-1069, -287)
 
 [node name="npc(1)" parent="." instance=ExtResource("2_xmsyt")]
 

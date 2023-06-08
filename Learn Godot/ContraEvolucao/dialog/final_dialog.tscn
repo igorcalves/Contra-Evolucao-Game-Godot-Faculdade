@@ -1,0 +1,112 @@
+[gd_scene load_steps=7 format=3 uid="uid://w6ejliw7gso3"]
+
+[ext_resource type="Script" path="res://ContraEvolucao/dialog/final_dialog.gd" id="1_fyq5g"]
+[ext_resource type="Texture2D" uid="uid://b1hm0bqs505i6" path="res://assets/dialog/New Piskel (4).png" id="1_u2xhs"]
+[ext_resource type="FontFile" uid="uid://c4fqoidpkapkt" path="res://ContraEvolucao/kurland.ttf" id="3_jc3f2"]
+
+[sub_resource type="Animation" id="Animation_xggla"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_e1o2w"]
+resource_name = "fade_in"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.9),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_jy67j"]
+_data = {
+"RESET": SubResource("Animation_xggla"),
+"fade_in": SubResource("Animation_e1o2w")
+}
+
+[node name="Control" type="Control"]
+z_index = 1
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -1152.0
+offset_bottom = -648.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.6, 0.6)
+script = ExtResource("1_fyq5g")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = -158.571
+offset_top = -190.0
+offset_right = 291.429
+offset_bottom = 380.0
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("1_u2xhs")
+
+[node name="Label" type="Label" parent="TextureRect"]
+layout_mode = 0
+offset_left = 101.429
+offset_top = 125.714
+offset_right = 454.429
+offset_bottom = 405.714
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_jc3f2")
+theme_override_font_sizes/font_size = 22
+text = "O Polvo finalmente foi 
+derrotado pelo que tudo 
+indica as atividades nesta
+ilha misteriosa vão se
+normalizar parabéns heroi
+tudo isso foi graças a você.
+agora voce pode
+"
+
+[node name="GridContainer" type="GridContainer" parent="TextureRect"]
+layout_mode = 0
+offset_left = 100.34
+offset_top = 361.905
+offset_right = 276.34
+offset_bottom = 427.905
+scale = Vector2(1.4, 1.4)
+theme_override_constants/v_separation = -10
+
+[node name="Continuar" type="Button" parent="TextureRect/GridContainer" groups=["button"]]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 1, 0, 1)
+theme_override_fonts/font = ExtResource("3_jc3f2")
+text = "continuar explorando
+"
+flat = true
+
+[node name="Voltar ao menu" type="Button" parent="TextureRect/GridContainer" groups=["button"]]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_jc3f2")
+text = "voltar ao menu"
+flat = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="TextureRect"]
+root_node = NodePath("../..")
+autoplay = "fade_in"
+libraries = {
+"": SubResource("AnimationLibrary_jy67j")
+}

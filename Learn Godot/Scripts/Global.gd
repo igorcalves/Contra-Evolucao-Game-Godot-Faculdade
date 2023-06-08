@@ -7,19 +7,21 @@ var rng = RandomNumberGenerator.new()
 
 var coins = 0
 var kills = 0
-var health = 10
-var move_speed = 800
-var damage = 5
+var health = 100
+var move_speed = 256
+var damage = 10
 var add_speed = 0
 var add_healh = 0
 var add_damage = 0
 var scene_can_add = true
 var NOT_can_move = false
 var select_npc: int = 0
-
+var final_boss
 
 func _ready():
 	pass
+func pay_coins():
+	coins -=10
 
 func increase_speed(npc_speed: int) ->void:
 	move_speed += npc_speed

@@ -10,9 +10,9 @@ extends CharacterBody2D
 var NOT_can_move = Global.NOT_can_move
 
 const scene: PackedScene = preload("res://ContraEvolucao/Status/cenas_status.tscn")
-
+const final_dialogue: PackedScene = preload("res://ContraEvolucao/dialog/final_dialog.tscn")
 var status_scene_instance: PackedScene
-
+var one_windown = true
 
 var can_attack: bool = true
 var can_die: bool = false
@@ -26,6 +26,12 @@ func PLAYER():
 	pass
 
 func _physics_process(_delta: float) -> void:
+	if Global.final_boss and one_windown:
+		Global.NOT_can_move = true
+		one_windown = false
+		var final = final_dialogue.instantiate()
+		final.position = Vector2(0,0)
+		add_child(final)
 	if npc_in_range:
 		if Input.is_action_just_pressed("acction_button"):
 			if Global.select_npc == 1:
