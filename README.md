@@ -13,9 +13,8 @@ Passo a Passo para ter o jogo configurado para rodar
 
 Diga como essa etapa será:
 
-```
-Basta entrar neste link * [Contra Evolução](https://www.4shared.com/file/KZ7vtC2-jq/Contra_Evolucao.html) após baixalo basta execula-lo e pronto.
-```
+Basta entrar neste link 
+* [Contra Evolução](https://www.4shared.com/file/KZ7vtC2-jq/Contra_Evolucao.html) após baixalo basta execula-lo e pronto.
 
 ## 🛠️ Construído com
 
