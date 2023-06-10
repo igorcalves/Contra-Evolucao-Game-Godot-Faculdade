@@ -30,9 +30,13 @@ Nós usamos [Github](https://github.com/) para controle de versão. Para as vers
 ## ✒️ Autores
 
 GABRIEL VIEIRA CELIO
+
 IGOR ALVES DA SILVA PEREIRA  
-LEANDRO CAVALCANTE CHAVES DA MATA  
+
+LEANDRO CAVALCANTE CHAVES DA MATA 
+
 VICTOR SUHETT SILVA ALVES VIEIRA  
+
 VICTOR YIP PAULINO 
 
 
